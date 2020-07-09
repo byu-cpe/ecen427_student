@@ -2,7 +2,6 @@
 
 The makefile in this directory allows you to build the bootloader and the linux device tree, and device tree overlays.
 
------
 ## Prerequisites
   1. Install the necessary packages:
 ```
@@ -16,7 +15,6 @@ _Note:_ If you are using a newer version of Ubuntu (18+ I think), you will need 
 
 	source /opt/Xilinx/Vivado/2017.4/settings64.sh
 
--------------
 
 ## Building the device tree
 
@@ -28,7 +26,6 @@ Once built, you can copy the device tree over the old one:
 sudo cp dtb/devicetree.dtb /boot/devicetree.dtb
 ```
 
------
 
 ## Building the bootloader
 
