@@ -1,0 +1,16 @@
+The makefile in this directory allows you to build the bootloader, the linux device tree, and device tree overlays.
+
+Prereqs:
+	- Install the "libssl-dev flex bison" packages (libssl1.0-dev on newer versions of Ubuntu)
+	- source /opt/Xilinx/Vivado/2017.4/settings64.set
+
+bootloader
+------------
+run 'make bootimg' to build to bootloader.  It will be placed in boot/BOOT.bin
+
+
+device tree
+-------------
+To modify the device tree for this overlay, first make any desired modifications to the source files (dts/*) and then recompile the binary (dtb/devicetree.dtb) using 'make binary'
+
+

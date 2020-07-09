@@ -1,0 +1,2 @@
+add_subdirectory(lab2_clock)
+add_subdirectory(lab3_space_invaders)
