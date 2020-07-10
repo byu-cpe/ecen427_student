@@ -1,2 +1,3 @@
+add_subdirectory(lab1_helloworld)
 add_subdirectory(lab2_clock)
 add_subdirectory(lab3_space_invaders)
