@@ -5,7 +5,7 @@ The makefile in this directory allows you to build the bootloader and the linux 
 ## Prerequisites
   1. Install the necessary packages:
 ```
-sudo apt install libssl-dev flex bison
+sudo apt install device-tree-compiler libssl-dev flex bison
 ```	
 
 _Note:_ If you are using a newer version of Ubuntu (18+ I think), you will need to install 
