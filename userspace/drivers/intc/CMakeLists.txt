@@ -1,1 +1,1 @@
-# add_library(intc intc.c)
+add_library(intc intc.c)
