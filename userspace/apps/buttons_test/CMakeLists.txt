@@ -1,0 +1,2 @@
+add_executable(buttons_test main.c)
+target_link_libraries(buttons_test buttons)
