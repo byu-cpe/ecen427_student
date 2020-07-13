@@ -1,0 +1,2 @@
+add_executable(switches_test main.c)
+target_link_libraries(switches_test switches)
