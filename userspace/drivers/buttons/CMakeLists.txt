@@ -1,1 +1,1 @@
-#add_library(buttons buttons.c)
+add_library(buttons buttons.c)

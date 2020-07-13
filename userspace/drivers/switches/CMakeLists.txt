@@ -1,1 +1,1 @@
-#add_library(switches switches.c)
+add_library(switches switches.c)
