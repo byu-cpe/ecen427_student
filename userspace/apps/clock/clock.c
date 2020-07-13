@@ -1,5 +1,6 @@
-#include "intc.h"
 #include <stdint.h>
+
+#include "intc.h"
 
 // This is invoked in response to a timer interrupt.
 // It does 2 things: 1) debounce switches, and 2) advances the time.
