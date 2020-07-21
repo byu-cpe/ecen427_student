@@ -12,10 +12,6 @@ ${DEVICETREE_BINARY}: SHELL := /bin/bash
 ${DEVICETREE_BINARY}: ${DEVICETREE_SOURCES}
 	dtc -I dts -O dtb -o dtb/devicetree.dtb ${DEVICETREE_SOURCE}
 	
-clean:
-	rm ${DEVICETREE_BINARY}
-
-
 # Bootloader compilation steps
 BOOTDIR = boot
 BOOTSRCDIR = $(realpath bootsrc)
@@ -67,3 +63,6 @@ ${WORKDIR}/u-boot:
 
 ${WORKDIR}/bitstream.bit: ${BOOT_BITSTREAM} 
 	cp $< $@
+
+clean:
+	rm -rf ${WORKDIR}
