@@ -18,6 +18,7 @@
 #include <unistd.h>
 
 #define UIO_EXAMPLE_MMAP_SIZE 0x1000 // size of memory to allocate
+#define OPEN_ERROR -1                // open() returns -1 on error
 
 /********************************** globals ***********************************/
 static int f;     // this is a file descriptor that describes an open UIO device
@@ -29,8 +30,8 @@ int32_t generic_init(char devDevice[]) {
 
   // open the device
   f = open(devDevice, O_RDWR);
-  if (f == UIO_EXAMPLE_ERROR) {
-    // file descriptors have to be > 0 to be valid
+  if (f == OPEN_ERROR) {
+    printf("uio example init error -- did you forget to sudo?\n");
     return UIO_EXAMPLE_ERROR;
   }
 
