@@ -9,6 +9,11 @@
 // devDevice: The file path to the uio dev file
 // Returns: A negative error code on error, INTC_SUCCESS otherwise
 // This must be called before calling any other intc_* functions
+//
+//  Tip: This function won't be able to open the UIO device file unless the
+//  program is run with ''sudo''.  This is easy to forget, so it is helpful to
+//  code an error message into this function that says "Did you forget to
+//  sudo?", if it cannot open the UIO file.
 int32_t intc_init(char devDevice[]);
 
 // Called to exit the driver (unmap and close UIO file)

@@ -12,8 +12,13 @@
 
 // Initialize the driver
 //  devFilePath: The file path to the uio dev file
-//  Return: An error code on error, BUTTONS_SUCCESS otherwise
-// This must be called before calling any other buttons_* functions
+//  Return: An error code on error, SWITCHES_SUCCESS otherwise
+// This must be called before calling any other switches_* functions
+//
+//  Tip: This function won't be able to open the UIO device file unless the
+//  program is run with ''sudo''.  This is easy to forget, so it is helpful to
+//  code an error message into this function that says "Did you forget to
+//  sudo?", if it cannot open the UIO file.
 int32_t switches_init(char *devFilePath);
 
 // Return the current state of the switches
