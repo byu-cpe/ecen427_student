@@ -31,5 +31,9 @@ int main() {
       isr_fit();
     if (interrupts & ...)
       isr_buttons();
+    
+    // Acknowledge the intc interrupt
+    
+    // Re-enable UIO interrupts
   }
 }
