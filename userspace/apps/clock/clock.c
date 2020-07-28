@@ -3,7 +3,7 @@
 #include "intc.h"
 
 // This is invoked in response to a timer interrupt.
-// It does 2 things: 1) debounce switches, and 2) advances the time.
+// It does 2 things: 1) help debounce buttons, and 2) advances the time.
 void isr_fit() {}
 
 // This is invoked each time there is a change in the button state (result of a
