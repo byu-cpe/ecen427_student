@@ -13,7 +13,7 @@ MODULE_DESCRIPTION("ECEn 427 Audio Driver");
 ////////////////////////////////////////////////////////////////////////////////
 
 // This struct contains all variables for an individual audio device. Although
-// this driver will only support one device, it is good practise to structure
+// this driver will only support one device, it is good practice to structure
 // device-specific variables this way.  That way if you were to extend your
 // driver to multiple devices, you could simply have an array of these device
 // structs.
