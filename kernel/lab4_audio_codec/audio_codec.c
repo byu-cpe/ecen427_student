@@ -85,7 +85,7 @@ static int audio_init(void) {
 static void audio_exit(void) {
   pr_info("%s: Removing Audio Driver!\n", MODULE_NAME);
   // platform_driver_unregister
-  // class_unregister and class_destroy
+  // class_destroy
   // unregister_chrdev_region
   return;
 }
