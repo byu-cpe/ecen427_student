@@ -8,25 +8,57 @@ MODULE_DESCRIPTION("ECEn 427 Audio Driver");
 
 #define MODULE_NAME "audio"
 
-// Function declarations
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Forward function declarations //////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 static int audio_init(void);
 static void audio_exit(void);
+static int audio_probe(struct platform_device *pdev);
+static int audio_remove(struct platform_device *pdev);
 
-module_init(audio_init);
-module_exit(audio_exit);
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Device Struct //////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+// This struct contains all variables for an individual audio device. Although
+// this driver will only support one device, it is good practise to structure
+// device-specific variables this way.  That way if you were to extend your
+// driver to multiple devices, you could simply have an array of these device
+// structs.
 
 struct audio_device {
   int minor_num;                // Device minor number
   struct cdev cdev;             // Character device structure
   struct platform_device *pdev; // Platform device pointer
   struct device *dev;           // device (/dev)
+  phys_addr_t phys_addr;        // Physical address
+  u32 mem_size;                 // Allocated mem space size
+  u32 *virt_addr;               // Virtual address
 
-  phys_addr_t phys_addr; // Physical address
-  u32 mem_size;          // Allocated mem space size
-  u32 *virt_addr;        // Virtual address
-
-  // Add any items to this that you need
+  // Add any device-specific items to this that you need
 };
+
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Driver Globals /////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+// This section is used to store any driver-level variables (ie. variables for
+// the entire driver, not per device)
+
+// Major number to use for devices managed by this driver
+static int major_num;
+
+// The audio device - since this driver only supports one device, we don't
+// need a list here, we can just use a single struct.
+static struct audio_device audio;
+
+// Register module init/exit with Linux
+module_init(audio_init);
+module_exit(audio_exit);
+
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Driver Functions ///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 // This is called when Linux loads your driver
 static int audio_init(void) {
@@ -54,6 +86,10 @@ static void audio_exit(void) {
   return;
 }
 
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Device Functions ///////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
 // Called by kernel when a platform device is detected that matches the
 // 'compatible' name of this driver.
 static int audio_probe(struct platform_device *pdev) {
@@ -78,6 +114,7 @@ static int audio_probe(struct platform_device *pdev) {
   return 0; //(success)
 }
 
+// Called when the platform device is removed
 static int audio_remove(struct platform_device *pdev) {
 
   // iounmap
