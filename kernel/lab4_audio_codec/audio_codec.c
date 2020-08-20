@@ -9,19 +9,11 @@ MODULE_DESCRIPTION("ECEn 427 Audio Driver");
 #define MODULE_NAME "audio"
 
 ////////////////////////////////////////////////////////////////////////////////
-/////////////////////// Forward function declarations //////////////////////////
-////////////////////////////////////////////////////////////////////////////////
-static int audio_init(void);
-static void audio_exit(void);
-static int audio_probe(struct platform_device *pdev);
-static int audio_remove(struct platform_device *pdev);
-
-////////////////////////////////////////////////////////////////////////////////
 /////////////////////// Device Struct //////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 // This struct contains all variables for an individual audio device. Although
-// this driver will only support one device, it is good practise to structure
+// this driver will only support one device, it is good practice to structure
 // device-specific variables this way.  That way if you were to extend your
 // driver to multiple devices, you could simply have an array of these device
 // structs.
@@ -52,13 +44,25 @@ static int major_num;
 // need a list here, we can just use a single struct.
 static struct audio_device audio;
 
-// Register module init/exit with Linux
-module_init(audio_init);
-module_exit(audio_exit);
+////////////////////////////////////////////////////////////////////////////////
+/////////////////////// Forward function declarations //////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+static int audio_init(void);
+static void audio_exit(void);
+static int audio_probe(struct platform_device *pdev);
+static int audio_remove(struct platform_device *pdev);
 
 ////////////////////////////////////////////////////////////////////////////////
 /////////////////////// Driver Functions ///////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+// This section contains driver-level functions.  Remember, when you print
+// logging information from these functions, you should use the pr_*() functions
+// (ie. pr_info, pr_warning, pr_err, etc.)
+
+// Register driver init/exit with Linux
+module_init(audio_init);
+module_exit(audio_exit);
 
 // This is called when Linux loads your driver
 static int audio_init(void) {
@@ -81,7 +85,7 @@ static int audio_init(void) {
 static void audio_exit(void) {
   pr_info("%s: Removing Audio Driver!\n", MODULE_NAME);
   // platform_driver_unregister
-  // class_unregister and class_destroy
+  // class_destroy
   // unregister_chrdev_region
   return;
 }
@@ -89,6 +93,11 @@ static void audio_exit(void) {
 ////////////////////////////////////////////////////////////////////////////////
 /////////////////////// Device Functions ///////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+// This section contains device-level functions.  Remember, when you print
+// logging information from these functions, you should use the dev_*()
+// functions
+// (ie. dev_info, dev_warning, dev_err, etc.)
 
 // Called by kernel when a platform device is detected that matches the
 // 'compatible' name of this driver.
