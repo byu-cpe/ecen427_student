@@ -1,0 +1,1 @@
+add_library(audio_config audio_config.c i2cps.c)
