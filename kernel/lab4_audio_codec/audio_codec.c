@@ -125,7 +125,7 @@ static int audio_probe(struct platform_device *pdev) {
 
 // Called when the platform device is removed
 static int audio_remove(struct platform_device *pdev) {
-
+  // free_irq
   // iounmap
   // release_mem_region
   // device_destroy
