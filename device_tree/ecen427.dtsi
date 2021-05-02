@@ -1,0 +1,75 @@
+/dts-v1/;
+/plugin/;
+  
+/ {
+  
+    fragment@0 {
+  
+        target = <&fpga_full>;
+        #address-cells = <1>;
+        #size-cells = <1>;
+  
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+  
+            firmware-name = "ecen427.bit.bin";
+        };
+    };
+  
+    fragment@1 {
+  
+        target = <&amba>;
+        __overlay__ {
+            ecen427_hello_world {
+			    compatible = "byu,ecen427-hello_world";
+		    };
+
+            /********************************* UIO Start **********************************/
+            ecen427_leds {
+                compatible = "generic-uio";
+                reg = <0x41240000 0x10000>;
+            };
+
+            ecen427_btns {
+                compatible = "generic-uio";
+                reg = <0x41220000 0x10000>;
+            };
+
+            ecen427_sws {
+                compatible = "generic-uio";
+                reg = <0x41230000 0x10000>;
+            };
+
+            ecen427_rgbleds {
+                compatible = "generic-uio";
+                reg = <0x41210000 0x10000>;
+            };
+
+            ecen427_user_intc {
+                compatible = "generic-uio";
+                interrupt-parent = <&intc>;
+                interrupts = <0x0 0x1E 0x04>;
+                reg = <0x41800000 0x10000>;
+            };
+
+            /******************************** Video Start *********************************/
+            ecen427_hdmi@43000000 {
+                compatible = "byu,ecen427-hdmi";
+                reg = <0x43000000 0x10000>;
+                vtc-reg = <0x43C10000>;
+                vtc-size = <0x1000>;
+                dynClk-reg = <0x43C00000>;
+                dynClk-size = <0x0100>;
+            };
+
+            /******************************** Audio Start *********************************/
+            ecen427_audio_codec {
+                compatible = "byu,ecen427-audio_codec";
+                reg = <0x43C20000 0x10000>;
+                interrupt-parent = <&intc>;
+                interrupts = <0x0 0x1F 0x04>;
+            };
+        };
+    };  
+};

@@ -1,40 +1,36 @@
 # Linux Device Tree and Bootloader
 
-The makefile in this directory allows you to build the bootloader and the linux device tree, and device tree overlays.
+The Makefile in this directory allows you to build the Linux Device Tree Overlay, as well as the bitstream .bin file. 
+
+Note: The full device tree that is loaded when by Linux early in the boot process is provided in `pynq.dts`.  We will not be modifying this, as it requires rebuilding the entire boot image, and modifying the bootloader files on the SD card.  Rather, we will use a *device tree overlay*, which allows us to make runtime additions to the base device tree.  This overlay is provided in `ecen427.dtsi`.
 
 ## Prerequisites
   1. Install the necessary packages:
-```
-sudo apt install device-tree-compiler libssl-dev flex bison
-```	
 
-_Note:_ If you are using a newer version of Ubuntu (18+ I think), you will need to install 
-	``libssl1.0-dev`` instead of ``libssl-dev``
-	
+      sudo apt install device-tree-compiler 
+
   2. Add the Xilinx tools to your ``PATH``:
 
-	source /opt/Xilinx/Vivado/2017.4/settings64.sh
+	    source /tools/Xilinx/Vivado/2012.2/settings64.sh
 
 
-## Building the device tree
+## Building the device tree and hardware binary
 
-To modify the device tree, first make any desired modifications to the source files (dts/*) and then recompile the binary (dtb/devicetree.dtb) using ``make binary``.  You can do this on the PYNQ board, or your local machine.
+(This should be done on a lab machine, or your local Linux computer with Vivado installed)
 
-Once built, you can copy the device tree over the old one:
+To modify the device tree: 
+  * First make any desired modifications to the device tree source (`ecen427.dtbi`) and to you bitstream (`hw/ecen427.bit`)
+  * Compile using ``make build``
+  * This will produce:
+      * The device tree overlay binary (`ecen427.dtbo`) 
+      * The bitstream binary (`ecen427.bit.bin`)
 
-```
-sudo cp dtb/devicetree.dtb /boot/devicetree.dtb
-```
 
+## Installing the Hardware
 
-## Building the bootloader
+The install the hardware, run `make install`.
 
-Building the bootloader requires the Xilinx tools, so it cannot be done on the PYNQ board.  Run ``make bootimg`` to build to bootloader.  It will be placed in ``boot/BOOT.bin``
+This will immediately replace the existing hardware bitstream on the board, and will install your device tree overlay.  This change is permanent; if the board is rebooted, it will automatically load the new bitstream and device tree at boot time.
 
-Once built, you can copy the new bootloader using remote copy:
-
-```
-scp boot/BOOT.bin root@pynqIP:/boot/BOOT.bin
-```
-
+*Note:* There seems to be a bug with the video hardware, and you may notice wrong colors or other problems when changing the hardware on-the-fly.  Just reboot your board and it should be resolved.
 
