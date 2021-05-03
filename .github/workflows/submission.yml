@@ -23,7 +23,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Add date
         run: |
-          date > .commitdate
+          TZ="America/Boise" date > .commitdate
           git config --global user.name 'TimestampBot'
           git config --global user.email timestampbot@users.noreply.github.com
           git add .commitdate
