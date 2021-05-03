@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/include/",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/include/config",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/include/uapi",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/arch/arm/include",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/arch/arm/include/generated/uapi",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/arch/arm/include/generated",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/arch/arm/include/uapi",
+                "/lib/modules/5.4.0-xilinx-v2020.1/build/arch/arm/include/asm/"
+            ],
+            "defines": ["__KERNEL__","CONFIG_SPARSE_IRQ", "KBUILD_MODNAME=\"hello_module\""],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
+        }
+    ],
+    "version": 4
+}

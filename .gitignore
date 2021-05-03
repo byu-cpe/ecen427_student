@@ -11,6 +11,7 @@ CMakeCache.txt
 Module.symvers
 modules.order
 *.mod.c
+*.mod
 *.cmd
 .tmp_versions
 .Xil

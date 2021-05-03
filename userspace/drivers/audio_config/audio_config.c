@@ -23,7 +23,7 @@
 #define IIC_SLAVE_ADDR 0x3B
 
 // the i2c dev num we need to talk to
-#define IIC_INDEX 0
+#define IIC_INDEX 1
 
 // ADAU internal registers
 enum audio_adau1761_regs {
