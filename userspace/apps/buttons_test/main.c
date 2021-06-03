@@ -19,6 +19,7 @@ void print_buttons(uint8_t buttons) {
   printf("\n");
 }
 
+// Run the buttons_test application
 int main() {
   printf("-------------------------------------------------------\n");
   printf("Welcome to the buttons test.\n");

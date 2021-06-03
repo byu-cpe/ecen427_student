@@ -14,6 +14,7 @@ void isr_buttons() {
   // Acknowledge the button interrupt
 }
 
+// Run the clock application
 int main() {
   // Initialize interrupt controller driver
   // Initialize buttons
@@ -31,9 +32,9 @@ int main() {
       isr_fit();
     if (interrupts & ...)
       isr_buttons();
-    
+
     // Acknowledge the intc interrupt
-    
+
     // Re-enable UIO interrupts
   }
 }
