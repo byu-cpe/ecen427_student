@@ -43,6 +43,7 @@ int main() {
   while (1) {
     switches = switches_read() & SWITCHES_ALL_MASK;
 
+    // Check if the switches have changes, and print them
     if (switches != switches_old) {
       print_switches(switches);
       switches_old = switches;
