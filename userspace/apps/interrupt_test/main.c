@@ -9,6 +9,7 @@
 
 #define EXIT_ERROR -1
 
+// Run the interrupt_test application
 int main() {
   int32_t err;
 

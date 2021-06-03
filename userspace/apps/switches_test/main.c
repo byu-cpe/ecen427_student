@@ -19,6 +19,7 @@ void print_switches(uint8_t switches) {
   printf("\n");
 }
 
+// Run the switches_test application
 int main() {
   printf("-------------------------------------------------------\n");
   printf("Welcome to the switches test.\n");
