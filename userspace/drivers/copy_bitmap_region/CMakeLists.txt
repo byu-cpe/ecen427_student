@@ -1,0 +1,1 @@
+add_library(copy_bitmap_region copy_bitmap_region.c xcopy_bitmap_region_linux.c xcopy_bitmap_region.c)
