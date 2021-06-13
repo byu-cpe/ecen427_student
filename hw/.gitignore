@@ -1,1 +1,7 @@
 /digilent_ip/vivado-library/ip/audio_codec_ctrl_v1.0/src/fifo/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
+vitis_hls_proj
+copy_bitmap_region.zip
+vitis_hls.log
+a.out
+ps7_summary.html
+/hls/bitmap_accelerator/bitmap_accelerator
