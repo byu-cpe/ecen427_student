@@ -1,0 +1,1 @@
+add_library(fill_bitmap_region fill_bitmap_region.c xfill_bitmap_region_linux.c xfill_bitmap_region.c)

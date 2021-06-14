@@ -37,7 +37,7 @@ int main() {
   printf("Test 1. Create RGB=(1, 2, 3) rectangle at (600, 400) with (w,h)=(1, "
          "79)\n");
   fill_pixel_buf(0);
-  copy_bitmap_region(pixel_buf, 0, 0, 600, 400, 1, 79, true, 1, 2, 3);
+  fill_bitmap_region(pixel_buf, 0, 0, 600, 400, 1, 79, true, 1, 2, 3);
   if (verify_bitmap(rgb_1_2_3_rect_at_600_400_size_1_79, pixel_buf)) {
     printf("Test 1 failed.\n");
     return 1;
@@ -49,7 +49,7 @@ int main() {
   printf("Test 2. Create RGB=(50, 75, 100) rectangle at (50, 75) with "
          "(w,h)=(15, 25)\n");
   fill_pixel_buf(0);
-  copy_bitmap_region(pixel_buf, 0, 0, 50, 75, 15, 25, true, 50, 75, 100);
+  fill_bitmap_region(pixel_buf, 0, 0, 50, 75, 15, 25, true, 50, 75, 100);
   if (verify_bitmap(rgb_50_75_100_rect_at_50_75_size_15_25, pixel_buf)) {
     printf("Test 2 failed.\n");
     return 1;
@@ -60,7 +60,7 @@ int main() {
   // Copy rectangle from (55, 85) to (200, 300) with (w,h) = (5, 7)
   printf("Test 3. Copy rectangle from (55, 85) to (200, 300) with (w,h) = (5, "
          "7)\n");
-  copy_bitmap_region(pixel_buf, 55, 85, 200, 300, 5, 7, false, 0, 0, 0);
+  fill_bitmap_region(pixel_buf, 55, 85, 200, 300, 5, 7, false, 0, 0, 0);
   if (verify_bitmap(copy_55_85_to_200_300_size_5_7, pixel_buf)) {
     printf("Test 3 failed.\n");
     return 1;
@@ -71,7 +71,7 @@ int main() {
   // Copy rectangle from (195, 302) to (0, 0) with (w,h) = (17, 19)
   printf("Test 4. Copy rectangle from (195, 302) to (0, 0) with (w,h) = (17, "
          "19)\n");
-  copy_bitmap_region(pixel_buf, 195, 302, 0, 0, 17, 19, false, 0, 0, 0);
+  fill_bitmap_region(pixel_buf, 195, 302, 0, 0, 17, 19, false, 0, 0, 0);
   if (verify_bitmap(copy_195_302_to_0_0_size_17_19, pixel_buf)) {
     printf("Test 4 failed.\n");
     return 1;

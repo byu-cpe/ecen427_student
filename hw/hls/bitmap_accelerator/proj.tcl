@@ -4,7 +4,7 @@ set hls_prj vitis_hls_proj
 open_project ${hls_prj} -reset
 
 # Top function of the design is "digitrec"
-set_top copy_bitmap_region
+set_top fill_bitmap_region
 
 # Add design and testbench files
 add_files bitmap_accelerator.c 
