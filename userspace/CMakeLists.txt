@@ -4,6 +4,7 @@ project(ecen427)
 set(CMAKE_BUILD_TYPE Release)
 
 
+include_directories(.)
 include_directories(drivers)
 
 add_subdirectory(drivers)

@@ -8,7 +8,7 @@
 #include "../kernel/hdmi_ctrl/ecen427_ioctl.h"
 #include "system.h"
 
-#include "copy_bitmap_region/copy_bitmap_region.h"
+#include "fill_bitmap_region/fill_bitmap_region.h"
 
 int main() {
   printf("hi there\n");
@@ -26,35 +26,35 @@ int main() {
   }
   printf("Frame buffer base address: %p\n", base_addr);
 
-  status = copy_bitmap_init(base_addr);
+  status = fill_bitmap_init(base_addr);
   assert(!status);
 
   // Fill screen
-  copy_bitmap_region(0, 0, 0, 0, 640, 480, true, 0, 0, 0);
+  fill_bitmap_region(0, 0, 0, 0, 640, 480, true, 0, 0, 0);
 
-  while (!copy_bitmap_region_is_done())
+  while (!fill_bitmap_region_is_done())
     ;
 
   // Make red square
-  copy_bitmap_region(0, 0, 0, 0, 30, 30, true, 255, 0, 0);
+  fill_bitmap_region(0, 0, 0, 0, 30, 30, true, 255, 0, 0);
 
-  while (!copy_bitmap_region_is_done())
+  while (!fill_bitmap_region_is_done())
     ;
 
   // Make blue square
-  copy_bitmap_region(0, 0, 15, 15, 30, 30, true, 0, 255, 0);
+  fill_bitmap_region(0, 0, 15, 15, 30, 30, true, 0, 255, 0);
 
-  while (!copy_bitmap_region_is_done())
+  while (!fill_bitmap_region_is_done())
     ;
 
   // Make green square
-  copy_bitmap_region(0, 0, 30, 30, 30, 30, true, 0, 0, 255);
+  fill_bitmap_region(0, 0, 30, 30, 30, 30, true, 0, 0, 255);
 
-  while (!copy_bitmap_region_is_done())
+  while (!fill_bitmap_region_is_done())
     ;
 
   // Copy it all to another place
-  copy_bitmap_region(0, 0, 320, 240, 60, 60, false, 0, 0, 0);
-  while (!copy_bitmap_region_is_done())
+  fill_bitmap_region(0, 0, 320, 240, 60, 60, false, 0, 0, 0);
+  while (!fill_bitmap_region_is_done())
     ;
 }

@@ -13,5 +13,6 @@
 #define SYSTEM_SWITCHES_UIO_FILE "/dev/uio4"
 #define SYSTEM_RGBLEDS_UIO_FILE "/dev/uio5"
 #define SYSTEM_INTC_UIO_FILE "/dev/uio6"
+#define SYSTEM_HDMI_FILE "/dev/ecen427_hdmi"
 
 #define SYSTEM_FIT_HZ_IN_MS 10
