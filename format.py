@@ -8,7 +8,7 @@ import sys
 
 repo_root_dir = pathlib.Path(__file__).parent.absolute()
 
-dirs_to_format = ["kernel", "userspace/apps", "userpace/drivers"]
+dirs_to_format = ["kernel", "userspace/apps", "userspace/drivers"]
 extensions_to_format = [".c", ".cpp", ".h"]
 
 def main():
