@@ -10,6 +10,24 @@
 
 #include "fill_bitmap_region/fill_bitmap_region.h"
 
+#define X0 0
+#define Y0 0
+#define IGNORE 0
+
+#define FILL_FROM_CONST true
+#define BLACK 0
+#define WHITE 255
+#define SQUARE_SIZE 30
+
+#define SQUARE0_XY 0
+#define SQUARE1_XY 15
+#define SQUARE2_XY 30
+
+#define DISPLAY_MID_X (SYSTEM_DISPLAY_W / 2)
+#define DISPLAY_MID_Y (SYSTEM_DISPLAY_H / 2)
+
+#define COPY_SIZE (SQUARE_SIZE * 2)
+
 int main() {
   printf("hi there\n");
   int fd;
@@ -29,32 +47,37 @@ int main() {
   status = fill_bitmap_init(base_addr);
   assert(!status);
 
-  // Fill screen
-  fill_bitmap_region(0, 0, 0, 0, 640, 480, true, 0, 0, 0);
+  // Fill screen black
+  fill_bitmap_region(IGNORE, IGNORE, X0, Y0, SYSTEM_DISPLAY_W, SYSTEM_DISPLAY_H,
+                     FILL_FROM_CONST, BLACK, BLACK, BLACK);
 
   while (!fill_bitmap_region_is_done())
     ;
 
   // Make red square
-  fill_bitmap_region(0, 0, 0, 0, 30, 30, true, 255, 0, 0);
+  fill_bitmap_region(IGNORE, IGNORE, SQUARE0_XY, SQUARE0_XY, SQUARE_SIZE,
+                     SQUARE_SIZE, FILL_FROM_CONST, WHITE, BLACK, BLACK);
 
   while (!fill_bitmap_region_is_done())
     ;
 
   // Make blue square
-  fill_bitmap_region(0, 0, 15, 15, 30, 30, true, 0, 255, 0);
+  fill_bitmap_region(IGNORE, IGNORE, SQUARE1_XY, SQUARE1_XY, SQUARE_SIZE,
+                     SQUARE_SIZE, FILL_FROM_CONST, BLACK, WHITE, BLACK);
 
   while (!fill_bitmap_region_is_done())
     ;
 
   // Make green square
-  fill_bitmap_region(0, 0, 30, 30, 30, 30, true, 0, 0, 255);
+  fill_bitmap_region(IGNORE, IGNORE, SQUARE2_XY, SQUARE2_XY, SQUARE_SIZE,
+                     SQUARE_SIZE, FILL_FROM_CONST, BLACK, BLACK, WHITE);
 
   while (!fill_bitmap_region_is_done())
     ;
 
   // Copy it all to another place
-  fill_bitmap_region(0, 0, 320, 240, 60, 60, false, 0, 0, 0);
+  fill_bitmap_region(X0, Y0, DISPLAY_MID_X, DISPLAY_MID_Y, COPY_SIZE, COPY_SIZE,
+                     false, IGNORE, IGNORE, IGNORE);
   while (!fill_bitmap_region_is_done())
     ;
 }
