@@ -10,8 +10,8 @@
 
 #include "fill_bitmap_region/fill_bitmap_region.h"
 
-#define X0 0
-#define Y0 0
+#define ORIGIN_X 0
+#define ORIGIN_Y 0
 #define IGNORE 0
 
 #define FILL_FROM_CONST true
@@ -32,6 +32,7 @@ int main() {
   printf("hi there\n");
   int fd;
   fd = open(SYSTEM_HDMI_FILE, O_RDWR);
+  // Check that UIO file opened correctly.
   if (fd < 0) {
     printf("Cannot open %s. Did you sudo?\n", SYSTEM_HDMI_FILE);
     return fd;
@@ -48,8 +49,8 @@ int main() {
   assert(!status);
 
   // Fill screen black
-  fill_bitmap_region(IGNORE, IGNORE, X0, Y0, SYSTEM_DISPLAY_W, SYSTEM_DISPLAY_H,
-                     FILL_FROM_CONST, BLACK, BLACK, BLACK);
+  fill_bitmap_region(IGNORE, IGNORE, ORIGIN_X, ORIGIN_Y, SYSTEM_DISPLAY_W,
+                     SYSTEM_DISPLAY_H, FILL_FROM_CONST, BLACK, BLACK, BLACK);
 
   while (!fill_bitmap_region_is_done())
     ;
@@ -76,8 +77,8 @@ int main() {
     ;
 
   // Copy it all to another place
-  fill_bitmap_region(X0, Y0, DISPLAY_MID_X, DISPLAY_MID_Y, COPY_SIZE, COPY_SIZE,
-                     false, IGNORE, IGNORE, IGNORE);
+  fill_bitmap_region(ORIGIN_X, ORIGIN_Y, DISPLAY_MID_X, DISPLAY_MID_Y,
+                     COPY_SIZE, COPY_SIZE, false, IGNORE, IGNORE, IGNORE);
   while (!fill_bitmap_region_is_done())
     ;
 }
