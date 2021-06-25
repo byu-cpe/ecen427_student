@@ -28,6 +28,9 @@
 
 #define COPY_SIZE (SQUARE_SIZE * 2)
 
+// Run the frame buffer check program
+// This draws red, green, and blue squares in the top-left of the screen
+// (origin), and then copies this region to the middle of the screen.
 int main() {
   printf("hi there\n");
   int fd;
