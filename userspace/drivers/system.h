@@ -16,3 +16,6 @@
 #define SYSTEM_HDMI_FILE "/dev/ecen427_hdmi"
 
 #define SYSTEM_FIT_HZ_IN_MS 10
+
+#define SYSTEM_DISPLAY_W 640
+#define SYSTEM_DISPLAY_H 480
