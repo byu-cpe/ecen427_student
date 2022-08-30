@@ -2,8 +2,12 @@ cmake_minimum_required(VERSION 3.4)
 project(ecen427)
 
 set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_STANDARD 17)
 
-if (NOT ${CMAKE_HOST_SYSTEM_PROCESSOR} EQUAL "armv7l")
+set (CMAKE_C_FLAGS_RELEASE "-O3")
+set (CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+if (NOT ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "armv7l")
     message(WARNING "Building on non-PYNQ board.  Cross-compiling will be attempted (this is experimental).")
 
     SET(CMAKE_SYSTEM_PROCESSOR armv7)
