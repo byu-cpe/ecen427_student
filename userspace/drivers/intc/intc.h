@@ -3,6 +3,10 @@
 
 #include <stdint.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define INTC_SUCCESS 0
 
 // Initializes the driver (opens UIO file and calls mmap)
@@ -14,7 +18,7 @@
 //  program is run with ''sudo''.  This is easy to forget, so it is helpful to
 //  code an error message into this function that says "Did you forget to
 //  sudo?", if it cannot open the UIO file.
-int32_t intc_init(char devDevice[]);
+int32_t intc_init(const char devDevice[]);
 
 // Called to exit the driver (unmap and close UIO file)
 void intc_exit();
@@ -39,5 +43,9 @@ void intc_irq_enable(uint32_t irq_mask);
 
 // Same as intc_irq_enable, except this disables interrupt lines
 void intc_irq_disable(uint32_t irq_mask);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* __INTC_H__ */
