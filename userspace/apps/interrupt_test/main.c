@@ -47,8 +47,8 @@ int main() {
   switches_enable_interrupts();
 
   // Enable the buttons and switches interrupt lines to the interrupt controller
-  intc_irq_enable(SYSTEM_INTC_IRQ_BUTTONS_IRQ);
-  intc_irq_enable(SYSTEM_INTC_IRQ_SWITCHES_IRQ);
+  intc_irq_enable(SYSTEM_INTC_IRQ_BUTTONS_MASK);
+  intc_irq_enable(SYSTEM_INTC_IRQ_SWITCHES_MASK);
 
   while (1) {
     // Block waiting for an interrupt
