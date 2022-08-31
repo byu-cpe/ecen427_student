@@ -21,4 +21,4 @@ ssh byu@$1 "mkdir -p ~/temp"
 scp $2 byu@$1:~/temp/
 
 echo "Running sudo ~/temp/$filename"
-ssh byu@$1 "echo '$password$newline' | sudo -S ~/temp/$filename"
+ssh -t byu@$1 "echo '$password$newline' | sudo -S ~/temp/$filename"
