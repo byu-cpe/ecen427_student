@@ -1,5 +1,5 @@
-#ifndef __INTC_H__
-#define __INTC_H__
+#ifndef INTC
+#define INTC
 
 #include <stdint.h>
 
@@ -48,4 +48,4 @@ void intc_irq_disable(uint32_t irq_mask);
 }
 #endif
 
-#endif /* __INTC_H__ */
+#endif /* INTC */
