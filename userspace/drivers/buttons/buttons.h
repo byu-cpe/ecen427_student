@@ -1,8 +1,12 @@
-#ifndef __BUTTONS_H
-#define __BUTTONS_H
+#ifndef BUTTONS
+#define BUTTONS
 
 #include <stdbool.h>
 #include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define BUTTONS_SUCCESS 0
 #define BUTTONS_0_MASK 0x1
@@ -21,7 +25,7 @@
 //  program is run with ''sudo''.  This is easy to forget, so it is helpful to
 //  code an error message into this function that says "Did you forget to
 //  sudo?", if it cannot open the UIO file.
-int32_t buttons_init(char *devFilePath);
+int32_t buttons_init(const char *devFilePath);
 
 // Return the current state of the buttons
 uint8_t buttons_read();
@@ -41,4 +45,8 @@ bool buttons_interrupt_pending();
 // Acknowledge a pending interrupt
 void buttons_ack_interrupt();
 
-#endif /* __BUTTONS_H */
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* BUTTONS */
