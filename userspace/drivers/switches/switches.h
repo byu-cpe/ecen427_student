@@ -1,8 +1,12 @@
-#ifndef __SWITCHES_H
-#define __SWITCHES_H
+#ifndef SWITCHES
+#define SWITCHES
 
 #include <stdbool.h>
 #include <stdint.h>
+
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #define SWITCHES_SUCCESS 0  // value of an success
 #define SWITCHES_0_MASK 0x1 // The mask for button zero
@@ -19,7 +23,7 @@
 //  program is run with ''sudo''.  This is easy to forget, so it is helpful to
 //  code an error message into this function that says "Did you forget to
 //  sudo?", if it cannot open the UIO file.
-int32_t switches_init(char *devFilePath);
+int32_t switches_init(const char *devFilePath);
 
 // Return the current state of the switches
 uint8_t switches_read();
@@ -39,4 +43,8 @@ bool switches_interrupt_pending();
 // Acknowledge a pending interrupt
 void switches_ack_interrupt();
 
-#endif /* __SWITCHES_H */
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* SWITCHES */
