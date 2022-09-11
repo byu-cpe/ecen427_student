@@ -2,11 +2,13 @@
 
 #include <stdint.h>
 
+#include "../utils.h"
+
 // Must define packWord for each of the different bit-widths.
 
 // clang-format off
 
-const uint32_t sprite_saucer_16x7[] =
+const uint32_t sprite_ufo_16x7[] =
 {
 	packWord16(0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0),
 	packWord16(0,0,0,1,1,1,1,1,1,1,1,1,1,0,0,0),
@@ -143,6 +145,14 @@ const uint32_t sprite_bunker_24x18[] =
 // strikes one of these blocks, you erode the block as you sequence through
 // these patterns.
 const uint32_t sprite_bunkerDamage0_6x6[] = {
+	packWord6(0,0,0,0,0,0),
+	packWord6(0,0,0,0,0,0),
+	packWord6(0,0,0,0,0,0),
+	packWord6(0,0,0,0,0,0),
+	packWord6(0,0,0,0,0,0),
+	packWord6(0,0,0,0,0,0)
+};
+const uint32_t sprite_bunkerDamage1_6x6[] = {
 	packWord6(0,1,1,0,0,0),
 	packWord6(0,0,0,0,0,1),
 	packWord6(1,1,0,1,0,0),
@@ -151,7 +161,7 @@ const uint32_t sprite_bunkerDamage0_6x6[] = {
 	packWord6(0,0,0,0,1,0)
 };
 
-const uint32_t sprite_bunkerDamage1_6x6[] = {
+const uint32_t sprite_bunkerDamage2_6x6[] = {
 	packWord6(1,1,1,0,1,0),
 	packWord6(1,0,1,0,0,1),
 	packWord6(1,1,0,1,1,1),
@@ -160,7 +170,7 @@ const uint32_t sprite_bunkerDamage1_6x6[] = {
 	packWord6(0,1,1,0,1,0)
 };
 
-const uint32_t sprite_bunkerDamage2_6x6[] = {
+const uint32_t sprite_bunkerDamage3_6x6[] = {
 	packWord6(1,1,1,1,1,1),
 	packWord6(1,0,1,1,0,1),
 	packWord6(1,1,0,1,1,1),
@@ -169,7 +179,7 @@ const uint32_t sprite_bunkerDamage2_6x6[] = {
 	packWord6(1,1,1,1,1,1)
 };
 
-const uint32_t sprite_bunkerDamage3_6x6[] = {
+const uint32_t sprite_bunkerDamage4_6x6[] = {
 	packWord6(1,1,1,1,1,1),
 	packWord6(1,1,1,1,1,1),
 	packWord6(1,1,1,1,1,1),

@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#include "../utils.h"
+
 // define the column count of each sprite type (same as bit width)
 #define SPRITES_16X7_COLS 16
 #define SPRITES_12X10_COLS 12
@@ -25,7 +27,7 @@
 #define SPRITES_3X5_ROWS 5
 #define SPRITES_5X5_ROWS 5
 
-extern const uint32_t sprite_saucer_16x7[SPRITES_16X7_ROWS];
+extern const uint32_t sprite_ufo_16x7[SPRITES_16X7_ROWS];
 
 extern const uint32_t sprite_alien_explosion_12x10[SPRITES_12X10_ROWS];
 extern const uint32_t sprite_alien_top_in_12x8[SPRITES_12X8_ROWS];
@@ -45,11 +47,12 @@ extern const uint32_t sprite_bunkerDamage0_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunkerDamage1_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunkerDamage2_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunkerDamage3_6x6[SPRITES_6X6_ROWS];
+extern const uint32_t sprite_bunkerDamage4_6x6[SPRITES_6X6_ROWS];
+
 extern const uint32_t sprite_bunker_upper_left_gone_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunker_upper_right_gone_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunker_lower_left_gone_6x6[SPRITES_6X6_ROWS];
 extern const uint32_t sprite_bunker_lower_right_gone_6x6[SPRITES_6X6_ROWS];
-extern const uint32_t sprite_bunker_block_6x6[SPRITES_6X6_ROWS];
 
 extern const uint32_t sprite_tankbullet_1x5[SPRITES_1X5_ROWS];
 extern const uint32_t sprite_tankbullet_gone_1x5[SPRITES_1X5_ROWS];
