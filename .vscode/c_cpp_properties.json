@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Kernel",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/lib/modules/5.4.0-xilinx-v2020.1/build/include/",
@@ -18,6 +18,13 @@
             "cStandard": "gnu11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-arm"
+        },
+        {
+            "name": "Userspace",
+            "includePath": [
+                "${workspaceFolder}/**",
+            ],
+            "cppStandard": "c++17",
         }
     ],
     "version": 4
