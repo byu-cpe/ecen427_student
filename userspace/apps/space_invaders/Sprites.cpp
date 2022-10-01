@@ -5,6 +5,7 @@
 #include "Sprite.h"
 #include "resources/sprites.h"
 
+// Constructor - construct all sprites
 Sprites::Sprites() {
   // Saucer
   ufo = new Sprite(sprite_ufo_16x7, SPRITES_16X7_ROWS, SPRITES_16X7_COLS);
@@ -141,30 +142,35 @@ Sprites::Sprites() {
       new Sprite(sprite_number9_5x5, SPRITES_5X5_ROWS, SPRITES_5X5_COLS);
 }
 
+// Returns the spite for a given character
 Sprite *Sprites::getChar(char letter) {
   if (chars.count(letter) == 0)
     return NULL;
   return chars[letter];
 }
 
+// Returns the spite for a given alien type
 Sprite *Sprites::getAlien(sprite_alien_type_t alien_type) {
   if (aliens.count(alien_type) == 0)
     return NULL;
   return aliens[alien_type];
 }
 
+// Returns a tank sprite (tank or explosion)
 Sprite *Sprites::getTank(sprite_tank_type_t tank_type) {
   if (tanks.count(tank_type) == 0)
     return NULL;
   return tanks[tank_type];
 }
 
+// Returns a bullet sprite, given the type
 Sprite *Sprites::getBullet(sprite_bullet_type_t bullet_type) {
   assert(bullets.count(bullet_type) != 0);
   // return NULL;
   return bullets[bullet_type];
 }
 
+// Returns a bunker damage pattern, given a damage level
 Sprite *Sprites::getBunkerDmg(uint8_t dmgLevel) {
   assert(dmgLevel < bunkerDmg.size());
   return bunkerDmg[dmgLevel];
