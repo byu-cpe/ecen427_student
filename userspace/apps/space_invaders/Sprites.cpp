@@ -142,7 +142,7 @@ Sprites::Sprites() {
       new Sprite(sprite_number9_5x5, SPRITES_5X5_ROWS, SPRITES_5X5_COLS);
 }
 
-// Returns the spite for a given character
+// Returns the sprite for a given character
 Sprites::~Sprites() {
   for (auto i : chars)
     delete i.second;
@@ -165,7 +165,7 @@ Sprite *Sprites::getChar(char letter) {
   return chars[letter];
 }
 
-// Returns the spite for a given alien type
+// Returns the sprite for a given alien type
 Sprite *Sprites::getAlien(sprite_alien_type_t alien_type) {
   if (aliens.count(alien_type) == 0)
     return NULL;
