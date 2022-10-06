@@ -143,6 +143,22 @@ Sprites::Sprites() {
 }
 
 // Returns the spite for a given character
+Sprites::~Sprites() {
+  for (auto i : chars)
+    delete i.second;
+  for (auto i : aliens)
+    delete i.second;
+  for (auto i : tanks)
+    delete i.second;
+  for (auto i : bullets)
+    delete i.second;
+  for (auto i : bunkerDmg)
+    delete i;
+  delete ufo;
+  delete explosion;
+  delete bunker;
+}
+
 Sprite *Sprites::getChar(char letter) {
   if (chars.count(letter) == 0)
     return NULL;
