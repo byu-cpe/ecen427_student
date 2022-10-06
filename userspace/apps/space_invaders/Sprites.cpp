@@ -142,14 +142,31 @@ Sprites::Sprites() {
       new Sprite(sprite_number9_5x5, SPRITES_5X5_ROWS, SPRITES_5X5_COLS);
 }
 
-// Returns the spite for a given character
+// destructor for all sprites
+Sprites::~Sprites() {
+  for (auto i : chars)
+    delete i.second;
+  for (auto i : aliens)
+    delete i.second;
+  for (auto i : tanks)
+    delete i.second;
+  for (auto i : bullets)
+    delete i.second;
+  for (auto i : bunkerDmg)
+    delete i;
+  delete ufo;
+  delete explosion;
+  delete bunker;
+}
+
+// Returns the sprite for a given character
 Sprite *Sprites::getChar(char letter) {
   if (chars.count(letter) == 0)
     return NULL;
   return chars[letter];
 }
 
-// Returns the spite for a given alien type
+// Returns the sprite for a given alien type
 Sprite *Sprites::getAlien(sprite_alien_type_t alien_type) {
   if (aliens.count(alien_type) == 0)
     return NULL;
