@@ -142,7 +142,7 @@ Sprites::Sprites() {
       new Sprite(sprite_number9_5x5, SPRITES_5X5_ROWS, SPRITES_5X5_COLS);
 }
 
-// Returns the sprite for a given character
+// destructor for all sprites
 Sprites::~Sprites() {
   for (auto i : chars)
     delete i.second;
@@ -159,6 +159,7 @@ Sprites::~Sprites() {
   delete bunker;
 }
 
+// Returns the sprite for a given character
 Sprite *Sprites::getChar(char letter) {
   if (chars.count(letter) == 0)
     return NULL;
