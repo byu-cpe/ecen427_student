@@ -37,6 +37,7 @@ typedef enum {
 class Sprites {
 public:
   Sprites();
+  ~Sprites();
 
   // UFO sprite
   Sprite *getUFO() { return ufo; }

@@ -10,7 +10,6 @@ class Sprite {
 public:
   // Construct a new sprite from bitmap data
   Sprite(const uint32_t data[], uint8_t height, uint8_t width);
-  ~Sprite() { delete data; }
 
 private:
   uint8_t width;
