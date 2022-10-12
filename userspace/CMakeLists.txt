@@ -9,7 +9,7 @@ set (CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 if (TIDY)
     find_program(CLANG_TIDY_EXE NAMES "clang-tidy-12" REQUIRED)
-    set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=modernize-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,google-*,misc-*,portability-*,-google-readability-braces-around-statements,-cppcoreguidelines-macro-usage")
+    set(CLANG_TIDY_COMMAND "${CLANG_TIDY_EXE}" "-checks=modernize-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,google-*,misc-*,portability-*,-google-readability-braces-around-statements,-cppcoreguidelines-macro-usage,-cppcoreguidelines-pro-bounds-array-to-pointer-decay")
 
 else() 
     if (NOT ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "armv7l")
