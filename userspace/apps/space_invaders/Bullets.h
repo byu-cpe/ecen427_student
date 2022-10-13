@@ -26,7 +26,7 @@ private:
 public:
   // Create new bullets
   void newPlayerBullet(Tank *tank);
-  void newEnemyBullet(Alien *alien);
+  void newEnemyBullet(const Alien &alien);
 
   // Get the player or enemy bullets
   Bullet *getPlayerBullet() { return playerBullet; }

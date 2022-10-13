@@ -1,6 +1,7 @@
 #ifndef ALIENS_H
 #define ALIENS_H
 
+#include <memory>
 #include <vector>
 
 #include "Alien.h"
@@ -12,7 +13,7 @@ public:
 
 private:
   // All Alien objects, row by row, starting with top row
-  std::vector<std::vector<Alien *>> aliens;
+  std::vector<std::vector<std::shared_ptr<Alien>>> aliens;
 
   // Tick counter and max ticks for moving the aliens
   uint32_t moveTickCnt;
@@ -33,7 +34,7 @@ private:
 
   // Returns the bottom most alien that is alive in a column, and nullptr if
   // they are all dead.
-  Alien *getBottomAlienInColumn(uint8_t col);
+  std::shared_ptr<Alien> getBottomAlienInColumn(uint8_t col);
 
 public:
   // Initialize all aliens.  This can be called again when all aliens are dead

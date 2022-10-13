@@ -26,7 +26,7 @@ private:
 
 public:
   // Check collision between both player and enemy bullets and the bunker.
-  bool checkBulletCollision(Bullet *bullet);
+  bool checkBulletCollision(Bullet &bullet);
 };
 
 #endif /* BUNKER_H */

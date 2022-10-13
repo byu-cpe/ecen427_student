@@ -15,7 +15,7 @@ public:
   Bullet(Tank *tank);
 
   // Enemy bullet. Make sure this calls the parent constructor.
-  Bullet(Alien *alien, Sprite *sprite1, Sprite *sprite2);
+  Bullet(const Alien &alien, Sprite *sprite1, Sprite *sprite2);
 
 private:
   // Whether bullet is a player bullet

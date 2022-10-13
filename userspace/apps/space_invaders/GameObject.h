@@ -47,23 +47,23 @@ public:
   // Kill the object, which should erase it.
   void kill();
 
-  uint16_t getX() { return x; }
-  uint16_t getY() { return y; }
-  uint16_t getWidth() { return sprite->getWidth() * size; }
-  uint16_t getHeight() { return sprite->getHeight() * size; }
+  uint16_t getX() const { return x; }
+  uint16_t getY() const { return y; }
+  uint16_t getWidth() const { return sprite->getWidth() * size; }
+  uint16_t getHeight() const { return sprite->getHeight() * size; }
 
   // Get the X midpoint
-  uint16_t getMidX() { return x + getWidth() / 2; }
+  uint16_t getMidX() const { return x + getWidth() / 2; }
 
   // Get the bottom of the object (useful for aliens firing missiles)
-  uint16_t getBottomY() { return y + getHeight(); }
+  uint16_t getBottomY() const { return y + getHeight(); }
 
   // Check whether the object is alive
-  bool isAlive() { return alive; }
+  bool isAlive() const { return alive; }
 
   // Check if this object is overlapping a given object.  This can be used to
   // handle all collisions in the game.
-  bool isOverlapping(GameObject *object);
+  bool isOverlapping(const GameObject &object);
 };
 
 #endif /* GAMEOBJECT_H */
