@@ -21,3 +21,6 @@ $(LARGE_IP_FILE):
 ip.zip: 
 	zip -s 9m zip/ip.zip $(LARGE_IP_FILE)
 	rm $(LARGE_IP_FILE)
+
+sim_pit:
+	vivado -source sim_proj.tcl -source run_sim.tcl
