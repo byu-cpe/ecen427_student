@@ -5,3 +5,4 @@ vitis_hls.log
 a.out
 ps7_summary.html
 /hls/bitmap_accelerator/bitmap_accelerator
+/sim_proj

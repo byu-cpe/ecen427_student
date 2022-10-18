@@ -18,3 +18,4 @@ modules.order
 /userspace/build
 /device_tree/build
 /hw/ecen427
+report
