@@ -56,7 +56,7 @@ module pit #(
     .s_axi_wvalid(s_axi_wvalid),
     .s_axi_wready(s_axi_wready),
     .s_axi_wdata(s_axi_wdata),
-    .s_axi_wstrb(s_axi_wstrb,)
+    .s_axi_wstrb(s_axi_wstrb),
 
     .s_axi_bvalid(s_axi_bvalid),
     .s_axi_bready(s_axi_bready),
@@ -71,7 +71,7 @@ module pit #(
     .s_axi_rresp(s_axi_rresp),
     .s_axi_rvalid(s_axi_rvalid),
     .s_axi_rready(s_axi_rready),
-    
+
     .irq(irq)
 	);
 
