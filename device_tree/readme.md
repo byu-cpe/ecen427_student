@@ -19,7 +19,7 @@ Note: The full device tree that is loaded when by Linux early in the boot proces
 (This should be done on a lab machine, or your local Linux computer with Vivado installed)
 
 To modify the device tree: 
-  * First make any desired modifications to the device tree source (`ecen427.dtbi`) and to you bitstream (`hw/ecen427.bit`)
+  * First make any desired modifications to the device tree source (`ecen427.dtbi`) and to your bitstream (`hw/ecen427.bit`)
   * Compile using ``make build``
   * This will produce:
       * The device tree overlay binary (`ecen427.dtbo`) 
