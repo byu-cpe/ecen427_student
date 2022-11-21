@@ -5,7 +5,7 @@ The Makefile in this directory allows you to build the Linux Device Tree Overlay
 Note: The full device tree that is loaded when by Linux early in the boot process is provided in `pynq.dts`.  We will not be modifying this, as it requires rebuilding the entire boot image, and modifying the bootloader files on the SD card.  Rather, we will use a *device tree overlay*, which allows us to make runtime additions to the base device tree.  This overlay is provided in `ecen427.dtsi`.
 
 ## Prerequisites
-  1. Install the necessary packages:
+  1. Install the necessary packages (this is already done on the lab computers):
 
       sudo apt install device-tree-compiler 
 
