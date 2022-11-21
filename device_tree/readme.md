@@ -11,7 +11,7 @@ Note: The full device tree that is loaded when by Linux early in the boot proces
 
   2. Add the Xilinx tools to your ``PATH``:
 
-	    source /tools/Xilinx/Vivado/2012.2/settings64.sh
+	    source /tools/Xilinx/Vivado/2020.2/settings64.sh
 
 
 ## Building the device tree and hardware binary
