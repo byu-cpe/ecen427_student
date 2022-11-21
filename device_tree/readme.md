@@ -33,7 +33,7 @@ To modify the device tree:
 
 1. Pull down the new `ecen427.dtbo` and `ecen427.bit.bin`.
 
-1. To install the hardware, go into the `device_tree` directory, and run `make install`.
+1. To install the hardware, go into the `device_tree` directory, and run `sudo make install`.
 
 	This will immediately replace the existing hardware bitstream on the board, and will install your device tree overlay.  This change is permanent; if the board is rebooted, it will automatically load the new bitstream and device tree at boot time.
 
