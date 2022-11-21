@@ -24,13 +24,18 @@ To modify the device tree:
   * This will produce:
       * The device tree overlay binary (`ecen427.dtbo`) 
       * The bitstream binary (`ecen427.bit.bin`)
+  * Push these new files up to Github.
 
 
 ## Installing the Hardware
 
-The install the hardware, run `make install`.
+(This should be done on your PYNQ board)
 
-This will immediately replace the existing hardware bitstream on the board, and will install your device tree overlay.  This change is permanent; if the board is rebooted, it will automatically load the new bitstream and device tree at boot time.
+1. Pull down the new `ecen427.dtbo` and `ecen427.bit.bin`.
+
+1. To install the hardware, go into the `device_tree` directory, and run `make install`.
+
+	This will immediately replace the existing hardware bitstream on the board, and will install your device tree overlay.  This change is permanent; if the board is rebooted, it will automatically load the new bitstream and device tree at boot time.
 
 *Note:* There seems to be a bug with the video hardware, and you may notice wrong colors or other problems when changing the hardware on-the-fly.  Just reboot your board and it should be resolved.
 
