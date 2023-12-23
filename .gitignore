@@ -19,6 +19,8 @@ modules.order
 /device_tree/build
 /hw/ecen427
 report
+*.log
+*.html
 
 hw/digilent_ip/vivado-library/ip/audio_codec_ctrl_v1.0/src/fifo/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
 hw/vitis_hls_proj
