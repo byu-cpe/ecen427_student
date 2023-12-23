@@ -19,3 +19,13 @@ modules.order
 /device_tree/build
 /hw/ecen427
 report
+
+hw/digilent_ip/vivado-library/ip/audio_codec_ctrl_v1.0/src/fifo/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
+hw/vitis_hls_proj
+hw/fill_bitmap_region.zip
+hw/vitis_hls.log
+hw/a.out
+hw/ps7_summary.html
+hw/hls/bitmap_accelerator/bitmap_accelerator
+hw/sim_proj
+hw/ecen427
