@@ -13,7 +13,7 @@ if (TIDY)
 
 else() 
     if (NOT ${CMAKE_HOST_SYSTEM_PROCESSOR} STREQUAL "armv7l")
-        message(WARNING "Building on non-PYNQ board.  Cross-compiling will be attempted (this is experimental).")
+        message(WARNING "Building on non-PYNQ board.  Cross-compiling will be performed.")
 
         SET(CMAKE_SYSTEM_PROCESSOR armv7)
         SET(CMAKE_CROSSCOMPILING 1)
