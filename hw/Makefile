@@ -2,7 +2,7 @@
 LARGE_IP_FILE = digilent_ip/vivado-library/ip/audio_codec_ctrl_v1.0/src/fifo/hdl/blk_mem_gen_v8_4_vhsyn_rfs.vhd
 
 all: $(LARGE_IP_FILE)
-	vivado -source ecen427.tcl
+	/tools/Xilinx/Vivado/2022.2/bin/vivado -source ecen427.tcl
 
 clean:
 	rm -rf ecen427 *.jou *.log *.debug *.str $(LARGE_IP_FILE)
@@ -23,4 +23,4 @@ ip.zip:
 	rm $(LARGE_IP_FILE)
 
 sim_pit:
-	vivado -source sim_proj.tcl -source run_sim.tcl
+	/tools/Xilinx/Vivado/2022.2/bin/vivado -source sim_proj.tcl -source run_sim.tcl
