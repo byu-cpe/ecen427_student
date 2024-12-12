@@ -27,6 +27,11 @@ void intc_exit();
 // Returns: Bitmask of activated interrupts
 uint32_t intc_wait_for_interrupt();
 
+// This function will check if an interrupt has occurred, waiting up to
+// 'timeout' milliseconds.
+// Returns: Bitmask of activated interrupts, 0 if no interrupt has occurred
+uint32_t intc_pending_nonblocking(int timeout);
+
 // Acknowledge interrupt(s) in the interrupt controller
 // irq_mask: Bitmask of interrupt lines to acknowledge.
 void intc_ack_interrupt(uint32_t irq_mask);
