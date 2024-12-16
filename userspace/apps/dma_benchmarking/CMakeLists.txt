@@ -1,0 +1,3 @@
+add_executable(dma_benchmarking dma_benchmarking.cpp)
+target_link_libraries(dma_benchmarking dma space_invaders_graphics)
+deploy_to_board(dma_benchmarking)

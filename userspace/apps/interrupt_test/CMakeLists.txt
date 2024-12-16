@@ -1,2 +1,2 @@
-add_executable(interrupt_test main.c)
+add_executable(interrupt_test main.cpp)
 target_link_libraries(interrupt_test buttons switches intc)
