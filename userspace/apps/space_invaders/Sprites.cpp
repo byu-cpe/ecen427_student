@@ -162,28 +162,27 @@ Sprites::~Sprites() {
 // Returns the sprite for a given character
 Sprite *Sprites::getChar(char letter) {
   if (chars.count(letter) == 0)
-    return NULL;
+    return nullptr;
   return chars[letter];
 }
 
 // Returns the sprite for a given alien type
 Sprite *Sprites::getAlien(sprite_alien_type_t alien_type) {
   if (aliens.count(alien_type) == 0)
-    return NULL;
+    return nullptr;
   return aliens[alien_type];
 }
 
 // Returns a tank sprite (tank or explosion)
 Sprite *Sprites::getTank(sprite_tank_type_t tank_type) {
   if (tanks.count(tank_type) == 0)
-    return NULL;
+    return nullptr;
   return tanks[tank_type];
 }
 
 // Returns a bullet sprite, given the type
 Sprite *Sprites::getBullet(sprite_bullet_type_t bullet_type) {
   assert(bullets.count(bullet_type) != 0);
-  // return NULL;
   return bullets[bullet_type];
 }
 

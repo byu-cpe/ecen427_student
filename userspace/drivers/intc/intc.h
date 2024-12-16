@@ -24,11 +24,14 @@ int32_t intc_init(const char devDevice[]);
 void intc_exit();
 
 // This function will block until an interrupt occurrs
+// The UIO interrupt line will be disabled, and intc_enable_uio_interrupts()
+// will need to be called to re-enable.
 // Returns: Bitmask of activated interrupts
 uint32_t intc_wait_for_interrupt();
 
-// This function will check if an interrupt has occurred, waiting up to
-// 'timeout' milliseconds.
+// Check if an interrupt has occurred, waiting up to 'timeout' milliseconds.
+// When an interrupt occurs, the UIO interrupt line will be disabled,
+// and intc_enable_uio_interrupts() will need to be called to re-enable.
 // Returns: Bitmask of activated interrupts, 0 if no interrupt has occurred
 uint32_t intc_pending_nonblocking(int timeout);
 

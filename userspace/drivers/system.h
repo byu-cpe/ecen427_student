@@ -8,9 +8,11 @@
 #define SYSTEM_SWITCHES_UIO_FILE "/dev/uio4"
 #define SYSTEM_RGBLEDS_UIO_FILE "/dev/uio5"
 #define SYSTEM_INTC_UIO_FILE "/dev/uio6"
+#define SYSTEM_DMA_UIO_FILE "/dev/uio7"
 #define SYSTEM_HDMI_FILE "/dev/ecen427_hdmi"
+#define SYSTEM_DMA_DESC_FILE "/dev/dma_desc"
 
-#define SYSTEM_FIT_PERIOD_SECONDS 0.01
+#define SYSTEM_FIT_PERIOD_SECONDS 0.02
 
 #define SYSTEM_DISPLAY_W 640
 #define SYSTEM_DISPLAY_H 480

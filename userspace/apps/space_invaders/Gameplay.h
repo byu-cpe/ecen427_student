@@ -1,5 +1,5 @@
-#ifndef GAMEPLAY_H
-#define GAMEPLAY_H
+#ifndef APPS_SPACE_INVADERS_GAMEPLAY_H
+#define APPS_SPACE_INVADERS_GAMEPLAY_H
 
 class Bunkers;
 class Tank;
@@ -34,4 +34,4 @@ public:
   bool isGameOver();
 };
 
-#endif /* GAMEPLAY_H */
+#endif /* APPS_SPACE_INVADERS_GAMEPLAY_H */

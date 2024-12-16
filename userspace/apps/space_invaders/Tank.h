@@ -1,5 +1,5 @@
-#ifndef TANK_H
-#define TANK_H
+#ifndef APPS_SPACE_INVADERS_TANK_H
+#define APPS_SPACE_INVADERS_TANK_H
 
 #include <stdint.h>
 
@@ -44,4 +44,4 @@ public:
   void kill();
 };
 
-#endif /* TANK_H */
+#endif /* APPS_SPACE_INVADERS_TANK_H */

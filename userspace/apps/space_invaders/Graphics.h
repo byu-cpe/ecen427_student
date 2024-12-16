@@ -1,30 +1,29 @@
-#ifndef GRAPHICS_H
-#define GRAPHICS_H
+#ifndef APPS_SPACE_INVADERS_GRAPHICS_H
+#define APPS_SPACE_INVADERS_GRAPHICS_H
 
 #include <cstdint>
 #include <cstdio>
 #include <string>
 
+#include "Colors.h"
 #include "Sprite.h"
+#include "Sprites.h"
 
 #define GRAPHICS_WIDTH 640
 #define GRAPHICS_HEIGHT 480
-
-// An RGB pixel/color
-typedef struct {
-  uint8_t r;
-  uint8_t g;
-  uint8_t b;
-} rgb_t;
+#define GRAPHICS_BYTES_PER_PIXEL 3
 
 // Used to draw graphics to HDMI pixel buffer
 class Graphics {
 public:
-  Graphics();
+  Graphics(Sprites &sprites);
 
 private:
   // File descriptor for opened HDMI device file
   int fd;
+
+  // Collection of loaded sprites
+  Sprites &sprites;
 
 public:
   // Fill the screen.  This is fastest if you write line by line.
@@ -46,10 +45,11 @@ public:
 
   // Draws a string on the screen, and returns the width
   uint16_t drawStr(std::string str, uint16_t x, uint16_t y, uint8_t size,
-                   rgb_t color);
+                   rgb_t color, rgb_t bgColor);
 
   // Draws a string on the screen that is centered horizontally
-  void drawStrCentered(std::string str, uint16_t y, uint8_t size, rgb_t color);
+  void drawStrCentered(std::string str, uint16_t y, uint8_t size, rgb_t color,
+                       rgb_t bgColor);
 
   // Returns the width of a str of given length and size.  This should take into
   // account the character sizes, and spacing between characters.  For a given
@@ -57,4 +57,4 @@ public:
   uint16_t getStrWidth(uint8_t strLen, uint8_t size);
 };
 
-#endif /* GRAPHICS_H */
+#endif /* APPS_SPACE_INVADERS_GRAPHICS_H */

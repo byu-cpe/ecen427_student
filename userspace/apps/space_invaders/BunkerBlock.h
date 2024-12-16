@@ -1,5 +1,5 @@
-#ifndef BUNKERBLOCK_H
-#define BUNKERBLOCK_H
+#ifndef APPS_SPACE_INVADERS_BUNKERBLOCK_H
+#define APPS_SPACE_INVADERS_BUNKERBLOCK_H
 
 #include <stdint.h>
 
@@ -23,4 +23,4 @@ public:
   void inflictDamage();
 };
 
-#endif /* BUNKERBLOCK_H */
+#endif /* APPS_SPACE_INVADERS_BUNKERBLOCK_H */

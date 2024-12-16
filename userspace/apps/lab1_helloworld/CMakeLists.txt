@@ -1,1 +1,0 @@
-add_executable(helloworld main.c)

@@ -3,6 +3,7 @@
         "ms-vscode.cpptools",
         "xaver.clang-format",
         "twxs.cmake",
-        "plorefice.devicetree"
+        "plorefice.devicetree",
+        "akiramiyakoda.cppincludeguard"
     ]
 }

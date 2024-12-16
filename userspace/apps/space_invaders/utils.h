@@ -1,5 +1,5 @@
-#ifndef UTILS_H
-#define UTILS_H
+#ifndef APPS_SPACE_INVADERS_UTILS_H
+#define APPS_SPACE_INVADERS_UTILS_H
 
 #define UTILS_PACKWORD_32(b31, b30, b29, b28, b27, b26, b25, b24, b23, b22,    \
                           b21, b20, b19, b18, b17, b16, b15, b14, b13, b12,    \
@@ -45,4 +45,4 @@
 #define UTILS_PACKWORD_3(b2, b1, b0) ((b2 << 2) | (b1 << 1) | (b0 << 0))
 
 #define UTILS_PACKWORD_1(b0) (b0)
-#endif /* UTILS_H */
+#endif /* APPS_SPACE_INVADERS_UTILS_H */

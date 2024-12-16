@@ -1,5 +1,5 @@
-#ifndef LIVES_H
-#define LIVES_H
+#ifndef APPS_SPACE_INVADERS_LIVES_H
+#define APPS_SPACE_INVADERS_LIVES_H
 
 #include <vector>
 
@@ -46,4 +46,4 @@ public:
   void gainALife();
 };
 
-#endif /* LIVES_H */
+#endif /* APPS_SPACE_INVADERS_LIVES_H */

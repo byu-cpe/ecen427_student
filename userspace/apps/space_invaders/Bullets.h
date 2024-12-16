@@ -1,5 +1,5 @@
-#ifndef BULLETS_H
-#define BULLETS_H
+#ifndef APPS_SPACE_INVADERS_BULLETS_H
+#define APPS_SPACE_INVADERS_BULLETS_H
 
 #include <list>
 #include <stdint.h>
@@ -46,4 +46,4 @@ public:
   bool tick();
 };
 
-#endif /* BULLETS_H */
+#endif /* APPS_SPACE_INVADERS_BULLETS_H */

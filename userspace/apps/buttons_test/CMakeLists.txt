@@ -1,2 +1,3 @@
-add_executable(buttons_test main.c)
+add_executable(buttons_test buttons_test.cpp)
 target_link_libraries(buttons_test buttons)
+deploy_to_board(buttons_test)

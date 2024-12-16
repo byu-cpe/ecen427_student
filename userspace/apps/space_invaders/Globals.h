@@ -1,5 +1,5 @@
-#ifndef GLOBALS_H
-#define GLOBALS_H
+#ifndef APPS_SPACE_INVADERS_GLOBALS_H
+#define APPS_SPACE_INVADERS_GLOBALS_H
 
 #include "Bullets.h"
 #include "Graphics.h"
@@ -32,4 +32,4 @@ public:
   static Lives &getLives() { return lives; }
 };
 
-#endif /* GLOBALS_H */
+#endif /* APPS_SPACE_INVADERS_GLOBALS_H */
