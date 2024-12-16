@@ -1,5 +1,5 @@
-#ifndef BUTTONS
-#define BUTTONS
+#ifndef DRIVERS_BUTTONS_BUTTONS_H
+#define DRIVERS_BUTTONS_BUTTONS_H
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -49,4 +49,4 @@ void buttons_ack_interrupt();
 }
 #endif
 
-#endif /* BUTTONS */
+#endif /* DRIVERS_BUTTONS_BUTTONS_H */
