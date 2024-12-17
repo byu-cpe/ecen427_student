@@ -1,5 +1,5 @@
-#ifndef SPRITE_H
-#define SPRITE_H
+#ifndef APPS_SPACE_INVADERS_SPRITE_H
+#define APPS_SPACE_INVADERS_SPRITE_H
 
 #include <cstdint>
 
@@ -24,4 +24,4 @@ public:
   bool isFgPixel(uint8_t row, uint8_t col);
 };
 
-#endif /* SPRITE_H */
+#endif /* APPS_SPACE_INVADERS_SPRITE_H */

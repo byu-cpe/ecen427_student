@@ -1,5 +1,5 @@
-#ifndef GAMEOBJECT_H
-#define GAMEOBJECT_H
+#ifndef APPS_SPACE_INVADERS_GAMEOBJECT_H
+#define APPS_SPACE_INVADERS_GAMEOBJECT_H
 
 #include <stdint.h>
 
@@ -66,4 +66,4 @@ public:
   bool isOverlapping(GameObject *object);
 };
 
-#endif /* GAMEOBJECT_H */
+#endif /* APPS_SPACE_INVADERS_GAMEOBJECT_H */

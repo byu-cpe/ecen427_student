@@ -1,2 +1,3 @@
-add_executable(switches_test main.c)
+add_executable(switches_test switches_test.cpp)
 target_link_libraries(switches_test switches)
+deploy_to_board(switches_test)

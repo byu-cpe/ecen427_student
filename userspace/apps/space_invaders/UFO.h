@@ -1,5 +1,5 @@
-#ifndef UFO_H
-#define UFO_H
+#ifndef APPS_SPACE_INVADERS_UFO_H
+#define APPS_SPACE_INVADERS_UFO_H
 
 #include <stdint.h>
 
@@ -38,4 +38,4 @@ public:
   void checkCollisions();
 };
 
-#endif /* UFO_H */
+#endif /* APPS_SPACE_INVADERS_UFO_H */

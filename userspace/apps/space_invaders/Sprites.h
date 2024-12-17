@@ -1,5 +1,5 @@
-#ifndef SPRITES_H
-#define SPRITES_H
+#ifndef APPS_SPACE_INVADERS_SPRITES_H
+#define APPS_SPACE_INVADERS_SPRITES_H
 
 #include <map>
 #include <vector>
@@ -72,4 +72,4 @@ private:
   Sprite *explosion;
   Sprite *bunker;
 };
-#endif /* SPRITES_H */
+#endif /* APPS_SPACE_INVADERS_SPRITES_H */

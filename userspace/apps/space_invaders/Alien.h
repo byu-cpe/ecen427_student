@@ -1,5 +1,5 @@
-#ifndef ALIEN_H
-#define ALIEN_H
+#ifndef APPS_SPACE_INVADERS_ALIEN_H
+#define APPS_SPACE_INVADERS_ALIEN_H
 
 #include <stdint.h>
 
@@ -38,4 +38,4 @@ public:
   bool isExploding() { return exploding; }
 };
 
-#endif /* ALIEN_H */
+#endif /* APPS_SPACE_INVADERS_ALIEN_H */

@@ -1,5 +1,5 @@
-#ifndef BUNKERS_H
-#define BUNKERS_H
+#ifndef APPS_SPACE_INVADERS_BUNKERS_H
+#define APPS_SPACE_INVADERS_BUNKERS_H
 
 #include <vector>
 
@@ -20,4 +20,4 @@ public:
   // Check collision between both player and enemy bullets and all bunkers.
   void checkCollisions();
 };
-#endif /* BUNKERS_H */
+#endif /* APPS_SPACE_INVADERS_BUNKERS_H */

@@ -1,5 +1,5 @@
-#ifndef BUNKER_H
-#define BUNKER_H
+#ifndef APPS_SPACE_INVADERS_BUNKER_H
+#define APPS_SPACE_INVADERS_BUNKER_H
 
 #include <stdint.h>
 #include <vector>
@@ -29,4 +29,4 @@ public:
   bool checkBulletCollision(Bullet *bullet);
 };
 
-#endif /* BUNKER_H */
+#endif /* APPS_SPACE_INVADERS_BUNKER_H */

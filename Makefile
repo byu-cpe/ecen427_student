@@ -1,16 +1,25 @@
-GCC_DIR = ${HOME}/g++-arm-8.2-ecen427/
-
-TEMPD= $(shell mktemp -d)
+ROOT_DIR = $(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+TOOLS_DIR = $(ROOT_DIR)/tools
 
 none:
 	echo "Please specify a target"
 
-g++-arm-8.2:
-	cd $(TEMPD) && \
-	wget "https://developer.arm.com/-/media/Files/downloads/gnu-a/8.2-2018.08/gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf.tar.xz?revision=51f3ba22-a569-4dda-aedc-7988690c3c17&ln=en&hash=4E3701F9F706EC18F254CB00DD0E8D153CA1A2AA" && \
-	tar -xf "gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf.tar.xz?revision=51f3ba22-a569-4dda-aedc-7988690c3c17&ln=en&hash=4E3701F9F706EC18F254CB00DD0E8D153CA1A2AA" && \
-	cp -r gcc-arm-8.2-2018.08-x86_64-arm-linux-gnueabihf $(GCC_DIR)/
-	rm -rf $(TEMPD)
+$(TOOLS_DIR):
+	mkdir -p $@
+
+g++-arm-11.2: $(TOOLS_DIR) $(TOOLS_DIR)/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++
+
+$(TOOLS_DIR)/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++:
+	@if lsb_release -a 2>/dev/null | grep -q "Pynqlinux"; then \
+	    echo "Error: This command should not be run on the PYNQ board"; \
+	    exit 1; \
+	fi
+	$(eval TMP := $(shell mktemp -d))
+	cd $(TMP) && \
+	wget "https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf.tar.xz?rev=ffc49e4af4cb4c298c2110a4d887716c&hash=4999788F321A7617C04CA172E31F6B22520741FF" && \
+	tar -xf "gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf.tar.xz?rev=ffc49e4af4cb4c298c2110a4d887716c&hash=4999788F321A7617C04CA172E31F6B22520741FF" && \
+	cp -r gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf $(TOOLS_DIR)/ && \
+	rm -rf $(TMP)
 
 
 	

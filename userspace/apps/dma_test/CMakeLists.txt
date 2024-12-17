@@ -1,0 +1,3 @@
+add_executable(dma_test dma_test.cpp)
+target_link_libraries(dma_test dma space_invaders_graphics)
+deploy_to_board(dma_test)

@@ -1,16 +1,18 @@
 include_directories(.)
 
+add_library(space_invaders_graphics
+    Graphics.cpp
+    Sprites.cpp
+    Sprite.cpp
+    resources/sprites.c
+)
+
 add_executable(space_invaders 
     main.cpp
 
     Globals.cpp
     Score.cpp
     Lives.cpp
-
-    Graphics.cpp
-    Sprite.cpp
-    Sprites.cpp
-    resources/sprites.c
 
     GameObject.cpp
 
@@ -31,4 +33,5 @@ add_executable(space_invaders
 )
 
 
-target_link_libraries(space_invaders buttons switches intc audio_config)
+target_link_libraries(space_invaders space_invaders_graphics buttons switches intc audio_config)
+deploy_to_board(space_invaders)

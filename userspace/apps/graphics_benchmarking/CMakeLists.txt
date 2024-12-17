@@ -1,0 +1,3 @@
+add_executable(graphics_benchmarking main.cpp)
+target_link_libraries(graphics_benchmarking space_invaders_graphics)
+deploy_to_board(graphics_benchmarking)

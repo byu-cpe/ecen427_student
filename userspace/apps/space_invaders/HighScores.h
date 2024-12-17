@@ -1,5 +1,5 @@
-#ifndef HIGHSCORES_H
-#define HIGHSCORES_H
+#ifndef APPS_SPACE_INVADERS_HIGHSCORES_H
+#define APPS_SPACE_INVADERS_HIGHSCORES_H
 
 #include <stdint.h>
 #include <string>
@@ -68,4 +68,4 @@ public:
   void drawHighScores();
 };
 
-#endif /* HIGHSCORES_H */
+#endif /* APPS_SPACE_INVADERS_HIGHSCORES_H */

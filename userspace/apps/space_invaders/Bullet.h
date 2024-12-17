@@ -1,5 +1,5 @@
-#ifndef BULLET_H
-#define BULLET_H
+#ifndef APPS_SPACE_INVADERS_BULLET_H
+#define APPS_SPACE_INVADERS_BULLET_H
 
 #include <stdint.h>
 
@@ -40,4 +40,4 @@ public:
   void kill();
 };
 
-#endif /* BULLET_H */
+#endif /* APPS_SPACE_INVADERS_BULLET_H */

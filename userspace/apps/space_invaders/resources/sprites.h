@@ -1,5 +1,5 @@
-#ifndef _SPRITES_H_
-#define _SPRITES_H_
+#ifndef APPS_SPACE_INVADERS_RESOURCES_SPRITES_H
+#define APPS_SPACE_INVADERS_RESOURCES_SPRITES_H
 
 #include <stdint.h>
 
@@ -102,4 +102,4 @@ extern const uint32_t sprite_number9_5x5[SPRITES_5X5_ROWS];
 
 extern const uint32_t sprite_letterBLANK_5x5[SPRITES_5X5_ROWS];
 
-#endif
+#endif /* APPS_SPACE_INVADERS_RESOURCES_SPRITES_H */

@@ -1,5 +1,5 @@
-#ifndef CONFIG
-#define CONFIG
+#ifndef APPS_SPACE_INVADERS_CONFIG_H
+#define APPS_SPACE_INVADERS_CONFIG_H
 
 #include "resources/sprites.h"
 
@@ -135,4 +135,4 @@
 // Maximum number of high score entries
 #define HIGH_SCORES_MAX_ENTRIES 8
 
-#endif /* CONFIG */
+#endif /* APPS_SPACE_INVADERS_CONFIG_H */

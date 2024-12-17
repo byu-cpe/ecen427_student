@@ -1,5 +1,5 @@
-#ifndef ALIENS_H
-#define ALIENS_H
+#ifndef APPS_SPACE_INVADERS_ALIENS_H
+#define APPS_SPACE_INVADERS_ALIENS_H
 
 #include <vector>
 
@@ -60,4 +60,4 @@ public:
   // Whether the aliens ahve reached the bottom of the screen (gamve over)
   bool reachedBottom() { return reachedBunker; }
 };
-#endif /* ALIENS_H */
+#endif /* APPS_SPACE_INVADERS_ALIENS_H */

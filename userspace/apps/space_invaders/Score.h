@@ -1,5 +1,5 @@
-#ifndef SCORE_H
-#define SCORE_H
+#ifndef APPS_SPACE_INVADERS_SCORE_H
+#define APPS_SPACE_INVADERS_SCORE_H
 
 #include <cstdlib>
 #include <stdint.h>
@@ -45,4 +45,4 @@ public:
   }
 };
 
-#endif /* SCORE_H */
+#endif /* APPS_SPACE_INVADERS_SCORE_H */

@@ -5,5 +5,7 @@
     "[cpp]": {
         "editor.formatOnSave": true,
     },
-    "C_Cpp.clang_format_fallbackStyle": "LLVM"
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C/C++ Include Guard.Macro Type": "Filepath",
+    "C/C++ Include Guard.Path Skip": 1
 }
