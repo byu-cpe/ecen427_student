@@ -42,7 +42,7 @@ function(deploy_to_board target_name)
             TARGET ${target_name} 
             POST_BUILD
             COMMENT "Sending ${target_name} to PYNQ board..."
-            COMMAND scp $<TARGET_FILE:${target_name}> byu@pynq-home:/home/byu/solns/cross-compiled/
+            COMMAND scp $<TARGET_FILE:${target_name}> byu@pynq:/home/byu/solns/cross-compiled/
         )
     endif()
 endfunction()
