@@ -53,6 +53,7 @@ include_directories(apps)
 include_directories(../kernel/hdmi_ctrl)
 include_directories(../kernel/audio_codec)
 include_directories(../kernel/dma_desc)
+include_directories(../kernel/pit)
 
 
 add_subdirectory(drivers)
