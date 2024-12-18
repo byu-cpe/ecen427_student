@@ -13,7 +13,7 @@
 #define SYSTEM_HDMI_FILE "/dev/ecen427_hdmi"
 #define SYSTEM_DMA_DESC_FILE "/dev/dma_desc"
 
-#define SYSTEM_FIT_PERIOD_SECONDS 0.01
+#define SYSTEM_FIT_PERIOD_SECONDS 0.01667
 
 #define SYSTEM_DISPLAY_W 640
 #define SYSTEM_DISPLAY_H 480

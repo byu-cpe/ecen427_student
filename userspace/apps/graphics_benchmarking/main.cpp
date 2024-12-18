@@ -15,8 +15,8 @@ int main() {
   // Time drawing sprites with background color
   clock_gettime(CLOCK_MONOTONIC, &start);
   for (int i = 0; i < 100; i++) {
-    g.drawSprite(s.getAlien(SPRITE_ALIEN_MID_OUT), 100, 100, 25, {255, 0, 0},
-                 {0, 0, 0});
+    g.drawSprite(s.getAlien(SPRITE_ALIEN_MID_OUT), 0, 100, 25, Colors::YELLOW,
+                 Colors::ROYAL);
   }
   clock_gettime(CLOCK_MONOTONIC, &end);
 
@@ -29,7 +29,8 @@ int main() {
   // Time drawing sprites without background color
   clock_gettime(CLOCK_MONOTONIC, &start);
   for (int i = 0; i < 100; i++) {
-    g.drawSprite(s.getAlien(SPRITE_ALIEN_MID_OUT), 100, 100, 25, {255, 0, 0});
+    g.drawSprite(s.getAlien(SPRITE_ALIEN_MID_OUT), GRAPHICS_WIDTH / 2, 100, 25,
+                 Colors::ROYAL);
   }
   clock_gettime(CLOCK_MONOTONIC, &end);
 
