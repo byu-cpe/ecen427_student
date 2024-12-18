@@ -5,7 +5,7 @@
     "[cpp]": {
         "editor.formatOnSave": true,
     },
-    "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "C/C++ Include Guard.Macro Type": "Filepath",
-    "C/C++ Include Guard.Path Skip": 1
+    "C/C++ Include Guard.Path Skip": 1,
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio"
 }
