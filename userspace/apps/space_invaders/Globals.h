@@ -7,9 +7,11 @@
 #include "Score.h"
 #include "Sprites.h"
 #include "system.h"
+#include "Audio.h"
 
 // Track all global variables as static members of this class
-class Globals {
+class Globals
+{
 public:
   Globals();
 
@@ -20,6 +22,7 @@ private:
   static Bullets bullets;
   static Score score;
   static Lives lives;
+  static Audio audio;
 
 public:
   static Graphics &getGraphics() { return graphics; }
@@ -30,6 +33,7 @@ public:
   static double getTickPeriod() { return SYSTEM_FIT_PERIOD_SECONDS; }
   static Score &getScore() { return score; }
   static Lives &getLives() { return lives; }
+  static Audio &getAudio() { return audio; }
 };
 
 #endif /* APPS_SPACE_INVADERS_GLOBALS_H */

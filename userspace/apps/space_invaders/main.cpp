@@ -47,7 +47,7 @@ int main() {
   std::vector<double> times;
 
   // How often to print the loop statistics
-  constexpr double PRINT_INTERVAL_S = 1.0;
+  constexpr double PRINT_INTERVAL_S = 5.0;
 
   while (1) {
     loop_count++;
