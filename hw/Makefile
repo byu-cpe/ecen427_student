@@ -24,3 +24,6 @@ ip.zip:
 
 sim_pit:
 	/tools/Xilinx/Vivado/2022.2/bin/vivado -source sim_proj.tcl -source run_sim.tcl
+
+synth_pit:
+	/tools/Xilinx/Vivado/2022.2/bin/vivado -source sim_proj.tcl -source run_synth.tcl
