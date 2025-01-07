@@ -9,6 +9,11 @@ $(TOOLS_DIR):
 
 g++-arm-11.2: $(TOOLS_DIR) $(TOOLS_DIR)/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++
 
+packages:
+	sudo apt install -y \
+		cmake \
+		build-essential
+
 $(TOOLS_DIR)/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-g++:
 	@if lsb_release -a 2>/dev/null | grep -q "Pynqlinux"; then \
 	    echo "Error: This command should not be run on the PYNQ board"; \
