@@ -17,7 +17,7 @@ $(DTSO): $(DTSI)
 	dtc -O dtb -o $@ -b 0 -@ $^
 
 $(BITSTREAM_BIN): $(LOCAL_BITSTREAM)
-	/tools/Xilinx/Vivado/2022.2/bin/bootgen -image $(BITSTREAM_BIF) -arch zynq -process_bitstream bin -w on
+	/tools/Xilinx/Vivado/2024.1/bin/bootgen -image $(BITSTREAM_BIF) -arch zynq -process_bitstream bin -w on
 
 $(LOCAL_BITSTREAM): $(HW_BITSTREAM)
 	cp $^ $@

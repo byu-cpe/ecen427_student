@@ -145,7 +145,7 @@ set proj_dir [get_property directory [current_project]]
 
 # Set project properties
 set obj [current_project]
-set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store"]" -objects $obj
+set_property -name "board_part_repo_paths" -value "[file normalize "$origin_dir/../../../.Xilinx/Vivado/2024.1/xhub/board_store/xilinx_board_store"]" -objects $obj
 set_property -name "board_part" -value "" -objects $obj
 set_property -name "compxlib.activehdl_compiled_library_dir" -value "$proj_dir/${_xil_proj_name_}.cache/compile_simlib/activehdl" -objects $obj
 set_property -name "compxlib.funcsim" -value "1" -objects $obj
