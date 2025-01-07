@@ -13,13 +13,13 @@ ecen427.bit: ecen427/ecen427.runs/impl_1/system_wrapper.bit
 
 # This target will unzip the LARGE_IP_FILES
 $(LARGE_IP_FILE):
-	zip -s 0 zip/ip.zip --out ip_unsplit.zip
+	/bin/zip -s 0 zip/ip.zip --out ip_unsplit.zip
 	unzip ip_unsplit.zip
 	rm ip_unsplit.zip
 
 # This can be used to zip the large IP file
 ip.zip: 
-	zip -s 9m zip/ip.zip $(LARGE_IP_FILE)
+	/bin/zip -s 9m zip/ip.zip $(LARGE_IP_FILE)
 	rm $(LARGE_IP_FILE)
 
 sim_pit:
