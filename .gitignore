@@ -7,6 +7,7 @@ vivado*.log
 CMakeFiles
 CMakeCache.txt
 *.o
+a.out
 *.ko
 Module.symvers
 modules.order
@@ -31,4 +32,6 @@ hw/ps7_summary.html
 hw/hls/bitmap_accelerator/bitmap_accelerator
 hw/sim_proj
 hw/ecen427
+
 /tools
+/cross-compiled
