@@ -69,6 +69,10 @@ int main() {
       printf(" -- Ack Interrupt -- ");
       buttons_ack_interrupt();
 
+      // Read the buttons again, in case they changed again
+      // before the interrupt was acknowledged
+      buttons = buttons_read() & BUTTONS_ALL_MASK;
+
       int_pending = buttons_interrupt_pending();
       printf("Int pending: %d", int_pending);
       if (int_pending) {
