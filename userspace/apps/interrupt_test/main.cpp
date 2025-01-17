@@ -42,6 +42,9 @@ int main() {
     exit(EXIT_ERROR);
   }
 
+  // Disable all interrupt lines
+  intc_irq_disable(0xFFFFFFFF);
+
   // Enable the GPIO interrupt outputs
   buttons_enable_interrupts();
   switches_enable_interrupts();
