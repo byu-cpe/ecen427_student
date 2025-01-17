@@ -8,7 +8,7 @@
 #define US_PER_S 1000000
 #define MS_PER_S 1000
 
-bool test_nonblocking = false;
+bool test_nonblocking = true;
 uint32_t int_mask = SYSTEM_INTC_IRQ_FIT_MASK;
 
 int main() {
