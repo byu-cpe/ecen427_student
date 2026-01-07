@@ -35,3 +35,5 @@ hw/ecen427
 
 /tools
 /cross-compiled
+.venv
+__pycache__/

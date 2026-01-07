@@ -26,5 +26,50 @@ $(TOOLS_DIR)/gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf/bin/arm-none-l
 	cp -r gcc-arm-11.2-2022.02-x86_64-arm-none-linux-gnueabihf $(TOOLS_DIR)/ && \
 	rm -rf $(TMP)
 
+IN_ENV = . .venv/bin/activate;
 
+.venv/bin/activate: requirements.txt
+	python3 -m venv .venv
+	$(IN_ENV) pip install -r requirements.txt
 	
+submit_lab1: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab1
+
+submit_lab2: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab2
+
+submit_lab3: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab3
+
+submit_lab4_m1: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab4_m1
+
+submit_lab4_m2: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab4_m2
+
+submit_lab4_m3: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab4_m3
+
+submit_lab5_m1: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab5_m1
+
+submit_lab5_m2: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab5_m2
+
+submit_lab5_m3: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab5_m3
+
+submit_lab5_m4: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab5_m4
+
+submit_lab6_m1: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab6_m1
+
+submit_lab6_m2: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab6_m2
+
+submit_lab7: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab7
+
+submit_lab8: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab8
