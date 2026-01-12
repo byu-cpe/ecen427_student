@@ -1,3 +1,8 @@
 add_executable(int_rate int_rate.cpp)
 target_link_libraries(int_rate intc)
 deploy_to_board(int_rate)
+
+add_executable(int_rate_nonblocking int_rate.cpp)
+target_compile_definitions(int_rate_nonblocking PRIVATE TEST_NONBLOCKING=1)
+target_link_libraries(int_rate_nonblocking intc)
+deploy_to_board(int_rate_nonblocking)

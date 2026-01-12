@@ -25,7 +25,6 @@
 			    compatible = "byu,ecen427-hello_world";
 		    };
 
-            /********************************* UIO Start **********************************/
             ecen427_leds {
                 compatible = "generic-uio";
                 reg = <0x41240000 0x10000>;
@@ -53,7 +52,6 @@
                 reg = <0x41800000 0x10000>;
             };
 
-            /******************************** Video Start *********************************/
             ecen427_hdmi@43000000 {
                 compatible = "byu,ecen427-hdmi";
                 reg = <0x43000000 0x10000>;
@@ -63,12 +61,16 @@
                 dynClk-size = <0x0100>;
             };
 
-            /******************************** Audio Start *********************************/
             ecen427_audio_codec {
                 compatible = "byu,ecen427-audio_codec";
                 reg = <0x43C20000 0x10000>;
                 interrupt-parent = <&intc>;
                 interrupts = <0x0 0x1F 0x04>;
+            };
+
+            ecen427_dma {
+                compatible = "generic-uio";
+                reg = <0x7E200000 0x10000>;
             };
         };
     };  

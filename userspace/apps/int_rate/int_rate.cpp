@@ -8,10 +8,16 @@
 #define US_PER_S 1000000
 #define MS_PER_S 1000
 
-bool test_nonblocking = false;
+#ifndef TEST_NONBLOCKING
+#define TEST_NONBLOCKING 0
+#endif
+
 uint32_t int_mask = SYSTEM_INTC_IRQ_FIT_MASK;
 
 int main() {
+  printf("Interrupt Rate Test Application - %s Mode\n",
+         TEST_NONBLOCKING ? "Non-blocking" : "Blocking");
+
   int err = intc_init(SYSTEM_INTC_UIO_FILE);
   if (err != 0) {
     printf("Init error (did you run sudo?)\n");
@@ -44,7 +50,7 @@ int main() {
 
     int timeout = 0;
 
-    if (test_nonblocking) {
+    if (TEST_NONBLOCKING) {
       if (intc_pending_nonblocking(timeout)) {
         int_cnt++;
         intc_ack_interrupt(int_mask);

@@ -1,4 +1,5 @@
 {
+    "window.title": "ECEN 427",
     "[c]": {
         "editor.formatOnSave": true,
     },
@@ -8,5 +9,7 @@
     "C/C++ Include Guard.Macro Type": "Filepath",
     "C/C++ Include Guard.Path Skip": 1,
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
-    "python.analysis.extraPaths": ["./py/"]
+    "python.analysis.extraPaths": [
+        "./py/"
+    ]
 }
