@@ -411,6 +411,48 @@ class FileExistsTest(RepoTest):
         return self.error_result()
 
 
+class FileNotEmptyTest(RepoTest):
+    """Checks to see if files exist and are not empty in a repo directory."""
+
+    def __init__(
+        self,
+        repo_test_suite,
+        repo_file_list,
+        abort_on_error=True,
+    ):
+        """repo_file_list is a list of files that should exist and not be empty."""
+        super().__init__(repo_test_suite, abort_on_error=abort_on_error)
+        self.repo_file_list = repo_file_list
+
+    def module_name(self):
+        name_str = "Files Not Empty: "
+        return name_str + ", ".join([str(s) for s in self.repo_file_list])
+
+    def perform_test(self):
+        success = True
+
+        for repo_file in self.repo_file_list:
+            file_path = self.repo_test_suite.working_path / repo_file
+            if not os.path.exists(file_path):
+                self.repo_test_suite.print_error(
+                    f"File does not exist: {file_path.relative_to(self.repo_test_suite.repo_root_path)}"
+                )
+                success = False
+            elif os.path.getsize(file_path) == 0:
+                self.repo_test_suite.print_error(
+                    f"File is empty: {file_path.relative_to(self.repo_test_suite.repo_root_path)}"
+                )
+                success = False
+            else:
+                self.repo_test_suite.print(
+                    f"File exists and is not empty: {file_path.relative_to(self.repo_test_suite.repo_root_path)}"
+                )
+
+        if success:
+            return self.success_result()
+        return self.error_result()
+
+
 class FileRegexCheck(RepoTest):
     """Checks to see if a given file has a given regular expression match."""
 
