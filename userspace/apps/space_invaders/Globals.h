@@ -2,6 +2,7 @@
 #define APPS_SPACE_INVADERS_GLOBALS_H
 
 #include "Bullets.h"
+#include "Colors.h"
 #include "Graphics.h"
 #include "Lives.h"
 #include "Score.h"
@@ -9,31 +10,56 @@
 #include "system.h"
 #include "Audio.h"
 
-// Track all global variables as static members of this class
+// Track all global variables using Meyer's Singleton pattern
 class Globals
 {
 public:
-  Globals();
+  Globals() = delete;
 
-private:
-  static Graphics graphics;
-  static Sprites sprites;
-  static rgb_t backgroundColor;
-  static Bullets bullets;
-  static Score score;
-  static Lives lives;
-  static Audio audio;
+  static Sprites &getSprites() {
+    static Sprites sprites;
+    return sprites;
+  }
 
-public:
-  static Graphics &getGraphics() { return graphics; }
-  static Sprites &getSprites() { return sprites; }
-  static rgb_t getBackgroundColor() { return backgroundColor; }
-  static void setBackgroundColor(rgb_t color) { backgroundColor = color; }
-  static Bullets &getBullets() { return bullets; }
+  static Graphics &getGraphics() {
+    static Graphics graphics(getSprites());
+    return graphics;
+  }
+
+  static rgb_t getBackgroundColor() {
+    static rgb_t backgroundColor = Colors::BLACK;
+    return backgroundColor;
+  }
+
+  static void setBackgroundColor(rgb_t color) {
+    static rgb_t &backgroundColor = []() -> rgb_t& {
+      static rgb_t bg = Colors::BLACK;
+      return bg;
+    }();
+    backgroundColor = color;
+  }
+
+  static Bullets &getBullets() {
+    static Bullets bullets;
+    return bullets;
+  }
+
   static double getTickPeriod() { return SYSTEM_FIT_PERIOD_SECONDS; }
-  static Score &getScore() { return score; }
-  static Lives &getLives() { return lives; }
-  static Audio &getAudio() { return audio; }
+
+  static Score &getScore() {
+    static Score score;
+    return score;
+  }
+
+  static Lives &getLives() {
+    static Lives lives;
+    return lives;
+  }
+
+  static Audio &getAudio() {
+    static Audio audio;
+    return audio;
+  }
 };
 
 #endif /* APPS_SPACE_INVADERS_GLOBALS_H */

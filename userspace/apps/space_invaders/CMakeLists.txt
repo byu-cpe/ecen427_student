@@ -10,7 +10,6 @@ add_library(space_invaders_graphics
 add_executable(space_invaders 
     main.cpp
 
-    Globals.cpp
     Score.cpp
     Lives.cpp
 
