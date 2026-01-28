@@ -1,0 +1,9 @@
+# Compiled executables
+memory_leak
+use_after_free
+double_free
+uninitialized
+array_bounds
+missing_destructor
+iterator_invalid
+null_pointer
