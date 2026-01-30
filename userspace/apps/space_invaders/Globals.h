@@ -8,11 +8,9 @@
 #include "Score.h"
 #include "Sprites.h"
 #include "system.h"
-#include "Audio.h"
 
 // Track all global variables using Meyer's Singleton pattern
-class Globals
-{
+class Globals {
 public:
   Globals() = delete;
 
@@ -26,18 +24,12 @@ public:
     return graphics;
   }
 
-  static rgb_t getBackgroundColor() {
+  static rgb_t &getBackgroundColor() {
     static rgb_t backgroundColor = Colors::BLACK;
     return backgroundColor;
   }
 
-  static void setBackgroundColor(rgb_t color) {
-    static rgb_t &backgroundColor = []() -> rgb_t& {
-      static rgb_t bg = Colors::BLACK;
-      return bg;
-    }();
-    backgroundColor = color;
-  }
+  static void setBackgroundColor(rgb_t color) { getBackgroundColor() = color; }
 
   static Bullets &getBullets() {
     static Bullets bullets;
@@ -54,11 +46,6 @@ public:
   static Lives &getLives() {
     static Lives lives;
     return lives;
-  }
-
-  static Audio &getAudio() {
-    static Audio audio;
-    return audio;
   }
 };
 
