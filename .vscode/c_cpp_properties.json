@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        {
+            "name": "Kernel",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/include/",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/include/config",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/include/uapi",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/arch/arm/include",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/arch/arm/include/generated/uapi",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/arch/arm/include/generated",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/arch/arm/include/uapi",
+                "/lib/modules/5.15.19-xilinx-v2022.1/build/arch/arm/include/asm/"
+            ],
+            "defines": ["__KERNEL__","CONFIG_SPARSE_IRQ", "KBUILD_MODNAME=\"hello_module\""],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
+        },
+        {
+            "name": "Userspace",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

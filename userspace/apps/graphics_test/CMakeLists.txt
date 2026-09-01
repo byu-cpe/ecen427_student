@@ -1,0 +1,3 @@
+add_executable(graphics_test main.cpp)
+target_link_libraries(graphics_test space_invaders_graphics)
+deploy_to_board(graphics_test)
