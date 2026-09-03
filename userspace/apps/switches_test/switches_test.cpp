@@ -19,13 +19,13 @@ void print_switches(uint8_t switches, bool int_pending_before_ack,
 int main() {
   printf("-------------------------------------------------------\n");
   printf("Welcome to the switches test.\n");
-  printf("When you press or release a button the new button values should be "
+  printf("When you flip a switch the new switch values should be "
          "printed in binary.\n\n");
-  printf("After each button press or release, the program will check if an "
+  printf("After each switch flip, the program will check if an "
          "interrupt is pending,\nthen acknowledge the interrupt, then verify "
          "that the interrupt is no longer pending.\n\n");
   printf("When correctly implemented, the program should print something like "
-         "the following\nafter each button press or release:\n\n");
+         "the following\nafter each switch flip:\n\n");
   printf(
       "Switches: 0001  Int pending: 1 -- Ack Interrupt -- Int pending: 0\n\n");
   printf("The switches driver does not handle debouncing; you may "
@@ -50,7 +50,7 @@ int main() {
     if (switches != switches_old) {
 
       printf("Switches: ");
-      // Loop through buttons, mask and print
+      // Loop through switches, mask and print
       for (int8_t i = (SWITCHES_CNT - 1); i >= 0; i--) {
         printf("%d", switches & (1 << i) ? 1 : 0);
       }
