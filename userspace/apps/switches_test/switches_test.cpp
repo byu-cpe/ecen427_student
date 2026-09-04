@@ -32,7 +32,7 @@ int main() {
          "see extra messages when the switches bounce.\n\n");
   printf("If the power jumper is loose, moving the switches may power cycle "
          "the board.\nIf you notice that happen, throw that jumper out and "
-         "get a new one from the\ndrawer on the left at the back of the "
+         "get a new one from the\ndrawer on the right at the back of the "
          "room.\n");
   printf("-------------------------------------------------------\n");
 
