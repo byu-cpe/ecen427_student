@@ -29,7 +29,11 @@ int main() {
   printf(
       "Switches: 0001  Int pending: 1 -- Ack Interrupt -- Int pending: 0\n\n");
   printf("The switches driver does not handle debouncing; you may "
-         "see extra messages when the switches bounce.\n");
+         "see extra messages when the switches bounce.\n\n");
+  printf("If the power jumper is loose, moving the switches may power cycle "
+         "the board.\nIf you notice that happen, throw that jumper out and "
+         "get a new one from the\ndrawer on the left at the back of the "
+         "room.\n");
   printf("-------------------------------------------------------\n");
 
   // Initialize switches and check for error
