@@ -13,7 +13,8 @@ from repo_test import FileNotEmptyTest
 
 choices = [
     "lab1",
-    "lab2",
+    "lab2_m1",
+    "lab2_m2",
     "lab3",
     "lab4_m1",
     "lab4_m2",
@@ -42,7 +43,7 @@ test_suite = TestSuite427(
 # One lifelong learning file per lab, checked at the lab's final milestone
 lifelong_learning_files = {
     "lab1": "lab1.txt",
-    "lab2": "lab2.txt",
+    "lab2_m2": "lab2.txt",
     "lab3": "lab3.txt",
     "lab4_m3": "lab4.txt",
     "lab5_m4": "lab5.txt",

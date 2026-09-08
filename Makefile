@@ -35,8 +35,11 @@ IN_ENV = . .venv/bin/activate;
 submit_lab1: .venv/bin/activate
 	$(IN_ENV) python3 submit.py lab1
 
-submit_lab2: .venv/bin/activate
-	$(IN_ENV) python3 submit.py lab2
+submit_lab2_m1: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab2_m1
+
+submit_lab2_m2: .venv/bin/activate
+	$(IN_ENV) python3 submit.py lab2_m2
 
 submit_lab3: .venv/bin/activate
 	$(IN_ENV) python3 submit.py lab3
