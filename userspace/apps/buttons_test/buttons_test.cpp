@@ -29,7 +29,11 @@ int main() {
   printf(
       "Buttons: 0001  Int pending: 1 -- Ack Interrupt -- Int pending: 0\n\n");
   printf("The buttons driver does not handle debouncing; you may "
-         "see extra messages when the buttons bounce.\n");
+         "see extra messages when the buttons bounce.\n\n");
+  printf("If you only see the ERROR on rare occasions, your driver is likely "
+         "fine.  A button\ncan bounce in the brief window between the ack and "
+         "the second pending check,\nwhich re-triggers the interrupt.  If the "
+         "ERROR appears on every press, there is\na bug in your driver.\n");
   printf("-------------------------------------------------------\n");
 
   // Initialize buttons and check for error
