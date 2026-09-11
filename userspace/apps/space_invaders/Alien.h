@@ -17,8 +17,6 @@ public:
 private:
   Sprite *spriteIn;
   Sprite *spriteOut;
-  uint16_t x, y;
-  uint8_t size;
 
   // Whether the 'in' sprite is being displayed
   bool in;

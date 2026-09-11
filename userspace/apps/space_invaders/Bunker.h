@@ -18,9 +18,6 @@ public:
   Bunker(uint16_t x, uint16_t y);
 
 private:
-  uint16_t x, y;
-  uint8_t size;
-
   // A bunker is comprised of several BunkerBlocks
   std::vector<BunkerBlock *> bunkerBlocks;
 
