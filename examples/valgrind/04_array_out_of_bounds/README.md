@@ -3,6 +3,8 @@
 ## Bug
 An off-by-one error in a loop that walks an array backwards. The loop starts at `numSlots` instead of `numSlots - 1`, so the first iteration reads one element past the end of the array.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 Using `<=` instead of `<`, or starting a backwards loop at `size` instead of `size - 1`.
 

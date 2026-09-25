@@ -3,6 +3,8 @@
 ## Bug
 `Container` creates five `Block` objects with `new` and stores the pointers in a vector, but it has no destructor. When the `Container` is deleted, the vector of pointers is freed, but the `Block` objects the pointers referred to are not. Notice in the program output that every block is created and none is destroyed.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 A class that owns dynamically allocated objects (a level, a manager, a composite object) and never defines a destructor to free them. The compiler-generated destructor destroys the vector, not what the pointers in it point to.
 
@@ -11,7 +13,7 @@ A class that owns dynamically allocated objects (a level, a manager, a composite
 20 bytes in 5 blocks are definitely lost in loss record 1 of 1
    at 0x4846FA3: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
    by 0x109473: Container::Container() (main.cpp:19)
-   by 0x1092AD: main (main.cpp:37)
+   by 0x1092AD: main (main.cpp:31)
 
 LEAK SUMMARY:
    definitely lost: 20 bytes in 5 blocks

@@ -20,13 +20,7 @@ public:
     }
   }
 
-  // BUG: Missing destructor!
-  // Should have:
-  // ~Container() {
-  //   for (auto block : blocks) {
-  //     delete block;
-  //   }
-  // }
+  // HERE
 
 private:
   std::vector<Block *> blocks;
@@ -37,7 +31,7 @@ int main() {
   Container *container = new Container();
 
   std::cout << "\nDeleting container...\n";
-  delete container; // Container deleted, but its blocks are leaked!
+  delete container;
 
   std::cout << "\nProgram ending...\n";
   return 0;

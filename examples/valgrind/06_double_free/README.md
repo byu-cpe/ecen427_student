@@ -3,6 +3,8 @@
 ## Bug
 Calling `delete` on the same object twice. `ItemList::remove()` deletes an item but leaves its pointer in the vector, so the destructor deletes it again.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 An object is deleted in one place (when it is "removed" or "killed"), but a container still holds the pointer. Later, cleanup code loops over the container and deletes everything.
 

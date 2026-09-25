@@ -3,6 +3,8 @@
 ## Bug
 A member variable (`count`) is never given an initial value, so it starts with whatever garbage happened to be in memory.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 A constructor that initializes some members but forgets one. Members are *not* automatically zeroed in C++.
 
@@ -11,10 +13,10 @@ Run with `--track-origins=yes` (the Makefile does this) so valgrind reports wher
 
 ```
 Conditional jump or move depends on uninitialised value(s)
-   at 0x10927A: Counter::tick() (main.cpp:12)
-   by 0x1091C9: main (main.cpp:27)
+   at 0x10927A: Counter::tick() (main.cpp:10)
+   by 0x1091C9: main (main.cpp:25)
  Uninitialised value was created by a stack allocation
-   at 0x109189: main (main.cpp:24)
+   at 0x109189: main (main.cpp:22)
 
 Counter expired on tick 9
 Counter expired on tick 19

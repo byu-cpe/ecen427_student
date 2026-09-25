@@ -18,30 +18,25 @@ public:
   void addItem(int id, bool active) { items.push_back(new Item(id, active)); }
 
   void removeInactive() {
-    // A range-based for loop uses an iterator behind the scenes. Removing the
-    // current element frees the list node that hidden iterator points to, and
-    // the loop then advances from the freed node.
     for (Item *item : items) {
       if (!item->active) {
         std::cout << "Removing item " << item->id << "\n";
         delete item;
-        items.remove(item); // BUG: the loop's hidden iterator is now invalid
+        items.remove(item); // HERE
       }
     }
 
-    // Writing the loop with an explicit iterator makes the problem visible.
-    // This version has the same bug:
+    // Explicit-iterator version 1:
     //
     // for (auto it = items.begin(); it != items.end(); ++it) {
     //   if (!(*it)->active) {
     //     std::cout << "Removing item " << (*it)->id << "\n";
     //     delete *it;
-    //     items.erase(it); // BUG: 'it' is now invalid, but the loop does ++it next
+    //     items.erase(it);
     //   }
     // }
     //
-    // The fix: erase() returns an iterator to the next element, so use it, and
-    // only ++it when nothing was erased:
+    // Explicit-iterator version 2:
     //
     // for (auto it = items.begin(); it != items.end();) {
     //   if (!(*it)->active) {

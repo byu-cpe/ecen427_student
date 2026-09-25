@@ -3,6 +3,8 @@
 ## Bug
 Accessing an object after it has been deleted. The pointer still holds the old address, but the memory is no longer valid.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 Deleting an object and then using it in the very next line: printing one of its fields, comparing it, or removing it from a container using a value read from it.
 

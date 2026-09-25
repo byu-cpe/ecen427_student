@@ -2,9 +2,7 @@
 
 class Counter {
 public:
-  // BUG: count is never initialized. Should be:
-  //   Counter(int max) : max(max), count(0) {}
-  Counter(int max) : max(max) {}
+  Counter(int max) : max(max) {} // HERE
 
   // Returns true every max-th call.
   bool tick() {

@@ -22,10 +22,9 @@ public:
     weapon = nullptr;
   }
 
-  // BUG: Doesn't check if weapon is nullptr before using it
   void attack() {
     std::cout << name << " attacks with ";
-    weapon->fire(); // BUG: weapon might be nullptr!
+    weapon->fire(); // HERE
   }
 
 private:
@@ -36,11 +35,9 @@ private:
 int main() {
   Player player("Hero");
 
-  // Player has no weapon yet, but tries to attack
   std::cout << "Attempting attack without weapon...\n";
-  player.attack(); // CRASH: weapon is nullptr!
+  player.attack();
 
-  // This code won't be reached
   player.equipWeapon(new Weapon("Sword", 10));
   player.attack();
   player.dropWeapon();

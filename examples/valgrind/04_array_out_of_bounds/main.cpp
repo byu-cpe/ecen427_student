@@ -14,7 +14,7 @@ public:
 
   // Find the highest-numbered slot that is in use, searching from the top.
   int lastUsedSlot() {
-    for (int i = numSlots; i >= 0; i--) { // BUG: should start at numSlots - 1
+    for (int i = numSlots; i >= 0; i--) { // HERE
       if (used[i])
         return i;
     }

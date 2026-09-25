@@ -22,7 +22,7 @@ public:
       Item *item = *it;
       if (!item->active) {
         delete item;
-        std::cout << "Removed item " << item->id << "\n"; // BUG: item was just deleted
+        std::cout << "Removed item " << item->id << "\n"; // HERE
         items.erase(it);
         return;
       }

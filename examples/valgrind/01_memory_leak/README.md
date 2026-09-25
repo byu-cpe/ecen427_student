@@ -3,6 +3,8 @@
 ## Bug
 An object created with `new` is never deleted. `ItemManager::removeItem()` erases the pointer from the list but forgets to `delete` the `Item` it points to. Nothing else references the object anymore, so the memory can never be freed. The destructor of `ItemManager` deletes whatever is still in the list, which is why items 1 and 3 are destroyed and item 2 is not.
 
+The spot to look at is marked `// HERE` in `main.cpp`.
+
 ## Common Scenario
 Removing an object from a container and forgetting that removing the *pointer* does not free the *object*. The same "definitely lost" report appears when a class that owns objects has no destructor at all.
 
@@ -31,7 +33,7 @@ Add `-g` to `CXXFLAGS` in the Makefile, rebuild (`make clean; make valgrind`), a
 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
    at 0x4846FA3: operator new(unsigned long) (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
    by 0x1094B6: ItemManager::addItem(int) (main.cpp:18)
-   by 0x1092B2: main (main.cpp:48)
+   by 0x1092B2: main (main.cpp:46)
 ```
 
 Note that the stack trace shows where the leaked memory was *allocated* (line 18, in `addItem()`), not where you forgot to delete it (`removeItem()`). Valgrind can't know where the delete should have been; that part is up to you.

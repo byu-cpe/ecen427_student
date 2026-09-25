@@ -17,12 +17,10 @@ class ItemManager {
 public:
   void addItem(int id) { items.push_back(new Item(id)); }
 
-  // BUG: This function removes the item from the list but doesn't delete it!
   void removeItem(int id) {
     for (auto it = items.begin(); it != items.end(); ++it) {
       if ((*it)->getId() == id) {
-        // Missing: delete *it;
-        items.erase(it);
+        items.erase(it); // HERE
         std::cout << "Removed item " << id << " from list\n";
         return;
       }
@@ -48,12 +46,10 @@ int main() {
   manager.addItem(2);
   manager.addItem(3);
 
-  // Remove item 2 - this will leak memory!
+  // Remove item 2
   manager.removeItem(2);
 
   std::cout << "Program ending...\n";
 
-  // When manager goes out of scope, it will delete items 1 and 3,
-  // but item 2 was already removed from the list (without being deleted)
   return 0;
 }
