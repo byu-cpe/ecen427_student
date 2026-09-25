@@ -1,8 +1,7 @@
 CXX = g++
-# Add -g to CXXFLAGS to get file names and line numbers in valgrind's output
-CXXFLAGS = -Wall
+CXXFLAGS = -g -Wall
 
-TARGET = memory_leak
+TARGET = array_bounds
 
 all: $(TARGET)
 

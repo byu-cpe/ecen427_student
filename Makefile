@@ -62,9 +62,6 @@ submit_lab5_m2: .venv/bin/activate
 submit_lab5_m3: .venv/bin/activate
 	$(IN_ENV) python3 submit.py lab5_m3
 
-submit_lab5_m4: .venv/bin/activate
-	$(IN_ENV) python3 submit.py lab5_m4
-
 submit_lab6_m1: .venv/bin/activate
 	$(IN_ENV) python3 submit.py lab6_m1
 

@@ -1,8 +1,7 @@
 CXX = g++
-# Add -g to CXXFLAGS to get file names and line numbers in valgrind's output
-CXXFLAGS = -Wall
+CXXFLAGS = -g -Wall
 
-TARGET = memory_leak
+TARGET = iterator_invalid
 
 all: $(TARGET)
 
@@ -13,7 +12,7 @@ run: $(TARGET)
 	./$(TARGET)
 
 valgrind: $(TARGET)
-	valgrind --leak-check=full ./$(TARGET)
+	valgrind --leak-check=full --show-leak-kinds=all ./$(TARGET)
 
 clean:
 	rm -f $(TARGET)
