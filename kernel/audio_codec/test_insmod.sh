@@ -1,13 +1,10 @@
 sudo dmesg --clear
-echo "\n----------Attemp 1----------" 
+echo "----------Attempt 1----------" | sudo tee /dev/kmsg
 sudo insmod audio_codec.ko
-ls -la /dev/audio_codec
+ls -la /dev/audio_codec /dev/ecen427/audio_codec
 sudo rmmod audio_codec
-dmesg
-
-sudo dmesg --clear
-echo "\n----------Attemp 2----------"
+echo "----------Attempt 2----------" | sudo tee /dev/kmsg
 sudo insmod audio_codec.ko
-ls -la /dev/audio_codec
+ls -la /dev/audio_codec /dev/ecen427/audio_codec
 sudo rmmod audio_codec
 dmesg 
