@@ -1,6 +1,8 @@
 TARGET_MODULE=pit
 
-ccflags-y := -std=gnu99 -Wno-declaration-after-statement
+# Disable the stack protector: this kernel expects a TLS-based stack canary
+# that the on-board compiler cannot generate (undefined __stack_chk_guard).
+ccflags-y := -fno-stack-protector -std=gnu99 -Wno-declaration-after-statement
 
 # If we are running by kernel building system
 ifneq ($(KERNELRELEASE),)
