@@ -5,7 +5,7 @@ all: $(LARGE_IP_FILE)
 	/tools/Xilinx/Vivado/2024.1/bin/vivado -source ecen427.tcl
 
 clean:
-	rm -rf ecen427 *.jou *.log *.debug *.str $(LARGE_IP_FILE)
+	rm -rf ecen427 pit_test_proj *.jou *.log *.debug *.str $(LARGE_IP_FILE)
 
 ecen427.bit: ecen427/ecen427.runs/impl_1/system_wrapper.bit
 	cp $< $@
@@ -27,3 +27,11 @@ sim_pit:
 
 synth_pit:
 	/tools/Xilinx/Vivado/2024.1/bin/vivado -source sim_proj.tcl -source run_synth.tcl
+
+# AXI stress test of pit.sv (see pit_test/pit_test_tb.sv); builds in pit_test_proj/
+test_pit:
+	/tools/Xilinx/Vivado/2024.1/bin/vivado -mode batch -nojournal -nolog -notrace -source pit_test/run_pit_test.tcl
+
+# Run the stress test in the xsim waveform viewer
+test_pit_gui:
+	/tools/Xilinx/Vivado/2024.1/bin/vivado -mode batch -nojournal -nolog -notrace -source pit_test/run_pit_test.tcl -tclargs gui

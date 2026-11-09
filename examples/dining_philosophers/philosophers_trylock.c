@@ -1,5 +1,6 @@
-// Dining philosophers WITH synchronization: one mutex per fork.
+// Dining philosophers WITH synchronization: lock only to check and take a fork.
 #include <pthread.h>
+#include <stdbool.h>
 #include <stdio.h>
 #include <unistd.h>
 
@@ -11,12 +12,24 @@
 int fork_owner[N];
 pthread_mutex_t fork_lock[N];
 
+bool try_pick_up(int fork, int id) {
+  bool got_it = false;
+  pthread_mutex_lock(&fork_lock[fork]);
+  if (fork_owner[fork] == FREE) { // check and take, both under the lock
+    fork_owner[fork] = id;
+    got_it = true;
+  }
+  pthread_mutex_unlock(&fork_lock[fork]);
+  return got_it;
+}
+
 void pick_up(int fork, int id) {
-  pthread_mutex_lock(&fork_lock[fork]); // waits until free, then takes it
-  fork_owner[fork] = id;
+  while (!try_pick_up(fork, id))
+    ; // fork is busy, try again
 }
 
 void put_down(int fork) {
+  pthread_mutex_lock(&fork_lock[fork]);
   fork_owner[fork] = FREE;
   pthread_mutex_unlock(&fork_lock[fork]);
 }

@@ -31,6 +31,7 @@ hw/a.out
 hw/ps7_summary.html
 hw/hls/bitmap_accelerator/bitmap_accelerator
 hw/sim_proj
+hw/pit_test_proj
 hw/ecen427
 
 /tools
