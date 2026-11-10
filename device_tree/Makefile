@@ -8,7 +8,10 @@ DTSO = ecen427.dtbo
 
 build: $(DTSO) $(BITSTREAM_BIN)
 
-install: build
+# Runs on the PYNQ board, which has no Vivado (bootgen) and may not have dtc,
+# so install only copies the committed .dtbo and .bit.bin; it must not depend
+# on build.  Run "make build" on a lab machine and commit the results first.
+install:
 	sudo cp $(DTSO) /lib/firmware
 	sudo cp $(BITSTREAM_BIN) /lib/firmware
 	sudo /etc/init.d/configure_hardware.sh
@@ -21,6 +24,8 @@ $(BITSTREAM_BIN): $(LOCAL_BITSTREAM)
 
 $(LOCAL_BITSTREAM): $(HW_BITSTREAM)
 	cp $^ $@
+
+.PHONY: build install clean
 
 clean:
 	rm -f $(DTSO) $(BITSTREAM_BIN) $(LOCAL_BITSTREAM)
